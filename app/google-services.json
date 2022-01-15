@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1066558457563",
+    "project_id": "wayapp-a6d5d",
+    "storage_bucket": "wayapp-a6d5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066558457563:android:48c0bec6c8671dbb706efe",
+        "android_client_info": {
+          "package_name": "com.dmiiy.wayapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066558457563-82h54hlfaghnu65noojnhdpgcuh5bs55.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dmiiy.wayapp",
+            "certificate_hash": "87e2e6fc73a2c19ac1a4450b3b1e375b8f4fa21d"
+          }
+        },
+        {
+          "client_id": "1066558457563-h899n64te72i84ltkisnmafco7tmn6te.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnl9ZudjRW-_4ys7VWbCBRCS99_f1-z14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066558457563-h899n64te72i84ltkisnmafco7tmn6te.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

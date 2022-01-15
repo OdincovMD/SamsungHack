@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">WayApp</string>
+    <string name="app">WAY</string>
+    <string name="email">Почта E-mail</string>
+    <string name="password">Пароль</string>
+    <string name="signin">ВОЙТИ</string>
+    <string name="forgotpassword">Забыли пароль</string>
+    <string name="googlesignin">Войти через Google</string>
+    <string name="mailsignin">Войти через E-mail</string>
+    <string name="phonesignin">Войти по номеру телефона</string>
+    <string name="noreg">Не зарегестрированы?</string>
+    <string name="reg">Создать аккаунт!</string>
+    <string name="googlereg">Зарегистрироваться через Google</string>
+    <string name="mailreg">Зарегистрироваться через E-mail</string>
+    <string name="phonereg">Зарегистрироваться по номеру телефона</string>
+    <string name="yesreg">Уже есть акаунт?</string>
+    <string name="yessignin">Войти</string>
+    <string name="fullname">Полное имя</string>
+    <string name="regaccount">Зарегестрироваться</string>
+    <string name="regemailaccount">Регистрация через E-mail</string>
+    <string name="back">Назад</string>
+</resources>
