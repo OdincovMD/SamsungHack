@@ -38,7 +38,7 @@ private FirebaseAuth mAuth;
         login = (Button) findViewById(R.id.buttonsignin);
         login.setOnClickListener(this);
         progressBarlogin = (ProgressBar) findViewById(R.id.progressBarEmaillogin);
-mAuth=FirebaseAuth.getInstance();
+        mAuth=FirebaseAuth.getInstance();
 
     }
 
