@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MailLogin extends AppCompatActivity implements View.OnClickListener{
 private TextView backsignin,forgetpassword;
@@ -87,7 +88,14 @@ private FirebaseAuth mAuth;
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-startActivity(new Intent(MailLogin.this,WayAppmap.class));
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    if (user.isEmailVerified()){
+                    startActivity(new Intent(MailLogin.this,WayAppmap.class));
+                    }
+                    else {
+                        user.sendEmailVerification();
+                        Toast.makeText(MailLogin.this,"Проверьте свою почту",Toast.LENGTH_LONG).show();
+                    }
                 }
                 else{
                     Toast.makeText(MailLogin.this,"Ошибка входа",Toast.LENGTH_LONG).show();
