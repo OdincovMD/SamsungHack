@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WayApp">
         <activity
+            android:name=".WayAppmap"
+            android:exported="false" />
+        <activity
+            android:name=".MailLogin"
+            android:exported="false" />
+        <activity
             android:name=".RegesterWindow"
             android:exported="false" />
         <activity

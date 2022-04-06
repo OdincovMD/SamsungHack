@@ -103,14 +103,14 @@ private Button buttonreg;
                             .setValue(usermail).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()){
-                                Toast.makeText(RegesterWindow.this,"Вы успешно зарегистриваны!",Toast.LENGTH_LONG).show();
+                            if (task.isSuccessful()) {
+                                Toast.makeText(RegesterWindow.this, "Вы успешно зарегистриваны!", Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
-                            }
-                            else {
+                            } else {
                                 Toast.makeText(RegesterWindow.this, "Ошибка регистрации! Попробуйте ещё раз!", Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
                             }
+
                         }
                     });
                 }

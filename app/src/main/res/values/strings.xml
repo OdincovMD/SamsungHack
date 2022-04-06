@@ -19,4 +19,5 @@
     <string name="regaccount">Зарегестрироваться</string>
     <string name="regemailaccount">Регистрация через E-mail</string>
     <string name="back">Назад</string>
+    <string name="forgetpassword">Забыли пароль?</string>
 </resources>
