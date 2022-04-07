@@ -67,7 +67,7 @@ private FirebaseAuth mAuth;
             emaillogin.requestFocus();
             return;
         }
-        if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             emaillogin.setError("Пожалуйста укажите верную почту!");
             emaillogin.requestFocus();
             return;
@@ -95,6 +95,7 @@ private FirebaseAuth mAuth;
                     else {
                         user.sendEmailVerification();
                         Toast.makeText(MailLogin.this,"Проверьте свою почту",Toast.LENGTH_LONG).show();
+                        progressBarlogin.setVisibility(View.GONE);
                     }
                 }
                 else{

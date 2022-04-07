@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegesterWindow extends AppCompatActivity implements View.OnClickListener {
@@ -25,6 +26,8 @@ private FirebaseAuth mAuth;
 private ProgressBar progressBar;
 private EditText editname,editemail,editpassword;
 private Button buttonreg;
+private DatabaseReference mDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,7 @@ private Button buttonreg;
         progressBar = (ProgressBar) findViewById(R.id.progressBarEmailreg);
         buttonreg =(Button) findViewById(R.id.SignInemailreg);
         buttonreg.setOnClickListener(this);
+        mDatabase = FirebaseDatabase.getInstance("https://wayapp-a6d5d-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users");
     }
     @Override
     public void onClick(View v) {
@@ -96,11 +100,10 @@ private Button buttonreg;
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if (task.isSuccessful()){
-                    UserMailreg usermail = new UserMailreg(name,email);
+                    UserMailreg user = new UserMailreg(name, email);
 
-                    FirebaseDatabase.getInstance().getReference("Users")
-                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                            .setValue(usermail).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    mDatabase.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>()
+                    {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
