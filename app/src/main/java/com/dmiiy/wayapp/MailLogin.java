@@ -55,6 +55,10 @@ private FirebaseAuth mAuth;
                 userLogin();
                 break;
             }
+            case R.id.textmailforgetpas:{
+                startActivity(new Intent(this, com.dmiiy.wayapp.forgetpassword.class));
+                break;
+            }
         }
     }
 
