@@ -20,4 +20,7 @@
     <string name="regemailaccount">Регистрация через E-mail</string>
     <string name="back">Назад</string>
     <string name="forgetpassword">Забыли пароль?</string>
+    <string name="network_error_message">Network error</string>
+    <string name="remote_error_message">Remote server error</string>
+    <string name="unknown_error_message">Unknown error</string>
 </resources>

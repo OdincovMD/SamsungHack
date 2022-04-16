@@ -94,7 +94,7 @@ private FirebaseAuth mAuth;
                 if (task.isSuccessful()){
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     if (user.isEmailVerified()){
-                    startActivity(new Intent(MailLogin.this,WayAppmap.class));
+                    startActivity(new Intent(MailLogin.this,mapyandex.class));
                     }
                     else {
                         user.sendEmailVerification();
