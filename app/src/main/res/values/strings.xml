@@ -23,4 +23,6 @@
     <string name="network_error_message">Network error</string>
     <string name="remote_error_message">Remote server error</string>
     <string name="unknown_error_message">Unknown error</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_googlemapway">googlemapway</string>
 </resources>
