@@ -25,4 +25,5 @@
     <string name="unknown_error_message">Unknown error</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="title_activity_googlemapway">googlemapway</string>
+    <string name="api_key">AIzaSyDSWt6ST2Vc3BqLdjZfqxBc_b0k-YIZHbA</string>
 </resources>
