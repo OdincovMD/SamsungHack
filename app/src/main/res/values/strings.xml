@@ -25,5 +25,19 @@
     <string name="unknown_error_message">Unknown error</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="title_activity_googlemapway">googlemapway</string>
-    <string name="api_key">AIzaSyDSWt6ST2Vc3BqLdjZfqxBc_b0k-YIZHbA</string>
+    <string name="title_activity_trymap">trymap</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_googlemap">Googlemap</string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_menu_way">MenuWay</string>
 </resources>
