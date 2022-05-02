@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,13 +18,17 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import java.util.List;
 
 public class MyBottomSheetFragment extends BottomSheetDialogFragment {
-    private List<ItemObject> mListItems;
-    private IClickListner iClickListner;
 
-    public MyBottomSheetFragment(List<ItemObject> mListItems, IClickListner iClickListner) {
-        this.mListItems = mListItems;
-        this.iClickListner = iClickListner;
-    }
+
+
+
+    // Next, prepare your data set. Create two string arrays for program name and program description respectively.
+    String[] programNameList = {"C", "C++", "Java", "Android"};
+    String[] programDescriptionList = {"C Description", "C++ Description", "Java Description",
+            "Android Description"};
+    // Define an integer array to hold the image recourse ids
+    int[] programImages = {R.drawable.c, R.drawable.css3,
+            R.drawable.html5, R.drawable.github};
 
     @NonNull
     @Override
@@ -34,13 +39,8 @@ public class MyBottomSheetFragment extends BottomSheetDialogFragment {
         RecyclerView rcvData=view.findViewById(R.id.rcv_data);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
         rcvData.setLayoutManager(linearLayoutManager);
-        ItemAdapter itemAdapter=new ItemAdapter(mListItems, new IClickListner() {
-            @Override
-            public void clickItem(ItemObject itemObject) {
-               iClickListner.clickItem(itemObject);
-            }
-        });
-        rcvData.setAdapter(itemAdapter);
+        ProgramAdapter programAdapter = new ProgramAdapter(programNameList, programDescriptionList, programImages);
+        rcvData.setAdapter(programAdapter);
         RecyclerView.ItemDecoration itemDecoration= new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL);
         rcvData.addItemDecoration(itemDecoration);
         return bottomSheetDialog;

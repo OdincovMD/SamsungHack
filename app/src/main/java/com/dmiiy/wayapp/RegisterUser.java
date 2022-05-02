@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
-private LinearLayout regthroughemail;
+private LinearLayout regthroughemail,regphonenum;
 private TextView signin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,8 @@ private TextView signin;
         regthroughemail.setOnClickListener(this);
         signin = (TextView) findViewById(R.id.textView6);
         signin.setOnClickListener(this);
+        regphonenum=(LinearLayout) findViewById(R.id.PhoneSignInButton);
+        regphonenum.setOnClickListener(this);
     }
     @Override
     public void onClick(View v){
@@ -31,6 +33,11 @@ private TextView signin;
             }
             case R.id.textView6: {
                 Intent intent = new Intent(RegisterUser.this, MainActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.PhoneSignInButton: {
+                Intent intent = new Intent(RegisterUser.this, Phonelgoin.class);
                 startActivity(intent);
                 break;
             }

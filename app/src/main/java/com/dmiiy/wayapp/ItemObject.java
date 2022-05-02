@@ -2,7 +2,6 @@ package com.dmiiy.wayapp;
 
 public class ItemObject {
     private String name;
-
     public ItemObject(String name) {
         this.name = name;
     }
