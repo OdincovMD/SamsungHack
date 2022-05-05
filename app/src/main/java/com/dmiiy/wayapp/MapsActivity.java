@@ -24,14 +24,15 @@ import java.util.List;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,View.OnClickListener{
     private ImageView imageView;
     private GoogleMap mMap;
-    private ActivityMapsBinding binding;
+   // private ActivityMapsBinding binding;
     private ImageButton imageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMapsBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_maps);
+        //binding = ActivityMapsBinding.inflate(getLayoutInflater());
+        //setContentView(binding.getRoot());
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);

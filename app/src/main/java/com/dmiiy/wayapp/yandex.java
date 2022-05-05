@@ -36,6 +36,7 @@ public class yandex extends Activity implements UserLocationObjectListener {
 
     private MapView mapView;
     private UserLocationLayer userLocationLayer, loc;
+    private Point mainPoint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +97,7 @@ public class yandex extends Activity implements UserLocationObjectListener {
         );
 
         userLocationView.getAccuracyCircle().setFillColor(Color.BLUE & 0x99ffffff);
+
     }
 
     @Override
