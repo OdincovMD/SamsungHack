@@ -12,64 +12,47 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-// Create the adapter by extending RecyclerView.Adapter. This custom ViewHolder will give access to your views
-public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHolder> {
-    // Declare variables to store data from the constructor
-    String[] programNameList;
-    String[] programDescriptionList;
-    int[] images;
+import java.util.List;
 
-    // Create a static inner class and provide references to all the Views for each data item.
-    // This is particularly useful for caching the Views within the item layout for fast access.
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-        // Declare member variables for all the Views in a row
-        TextView rowName;
-        TextView rowDescription;
-        ImageView rowImage;
-        // Create a constructor that accepts the entire row and search the View hierarchy to find each subview
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            // Store the item subviews in member variables
-            rowName = itemView.findViewById(R.id.textView1);
-            rowDescription = itemView.findViewById(R.id.textView2);
-            rowImage = itemView.findViewById(R.id.imageView);
-        }
+
+public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHolder>  {
+    private List<ItemObject> listaObjeto;
+    public ProgramAdapter(List<ItemObject> listaObjeto){
+        this.listaObjeto=listaObjeto;
     }
-    // Provide a suitable constructor
-    public ProgramAdapter( String[] programNameList, String[] programDescriptionList, int[] images){
-        // Initialize the class scope variables with values received from constructor
-
-        this.programNameList = programNameList;
-        this.programDescriptionList = programDescriptionList;
-        this.images = images;
-    }
-
-    // Create new views to be invoked by the layout manager
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Create a LayoutInflater object
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        // Inflate the custom layout
-        View view = inflater.inflate(R.layout.layout_item, parent, false);
-        // To attach OnClickListener
-        // Return a new holder instance
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
+        LayoutInflater layoutInflater =LayoutInflater.from(parent.getContext());
+        View listaItem= layoutInflater.inflate(R.layout.layout_item,null,false);
+        ViewHolder view= new ViewHolder(listaItem);
+        return view;
     }
 
-    // Replace the contents of a view to be invoked by the layout manager
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        // Get element from your dataset at this position and replace the contents of the View with that element
-        holder.rowName.setText(programNameList[position]);
-        holder.rowDescription.setText(programDescriptionList[position]);
-        holder.rowImage.setImageResource(images[position]);
+final ItemObject itemObject=listaObjeto.get(position);
+holder.tv_nombre.setText(itemObject.getNombre());
+holder.tv_grupo.setText(itemObject.getGrupo());
+holder.tv_foto.setImageResource(itemObject.getFoto());
     }
 
-    // Return the size of your dataset
     @Override
     public int getItemCount() {
-        return programNameList.length;
+
+        return listaObjeto.size();
     }
+
+    public class ViewHolder extends RecyclerView.ViewHolder{
+       public TextView tv_nombre;
+       public TextView tv_grupo;
+       public ImageView tv_foto;
+
+       public ViewHolder(@NonNull View itemView) {
+           super(itemView);
+           tv_nombre=(TextView) itemView.findViewById(R.id.tv_nombre);
+           tv_grupo= (TextView) itemView.findViewById(R.id.tv_grupo);
+           tv_foto=(ImageView) itemView.findViewById(R.id.iv_foto);
+       }
+   }
 }
