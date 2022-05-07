@@ -4,6 +4,5 @@
     <item>
         <bitmap android:src="@drawable/w2"
             android:gravity="center"/>
-
     </item>
 </layer-list>

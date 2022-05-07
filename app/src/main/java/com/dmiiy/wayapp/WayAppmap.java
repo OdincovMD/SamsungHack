@@ -29,9 +29,10 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-public class WayAppmap extends AppCompatActivity {
+public class WayAppmap extends AppCompatActivity implements View.OnClickListener,Dialogname.ExampleDialogListener {
     private ImageView profilepic;
 private Button logoutb;
+private TextView usern;
 private FirebaseUser user;
 private DatabaseReference reference;
 private String UID;
@@ -40,6 +41,14 @@ private StorageReference storageReference;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_way_appmap);
+
+        usern = (TextView) findViewById(R.id.username);
+        usern.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog();
+            }
+        });
         storageReference=FirebaseStorage.getInstance().getReference();
         StorageReference profileref= storageReference.child("users/"+FirebaseAuth.getInstance().getCurrentUser().getUid()+"/profile.jpg");
         profileref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -67,7 +76,7 @@ private StorageReference storageReference;
         user =FirebaseAuth.getInstance().getCurrentUser();
         reference= FirebaseDatabase.getInstance("https://wayapp-a6d5d-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users");
         UID=user.getUid();
-        final TextView nametext= (TextView) findViewById(R.id.textName);
+        final TextView nametext= (TextView) findViewById(R.id.username);
         final TextView emailtext = (TextView) findViewById(R.id.textEmail);
         reference.child(UID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -119,5 +128,19 @@ private StorageReference storageReference;
                 Toast.makeText(WayAppmap.this, "Failed", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onClick(View view) {
+
+    }
+
+    @Override
+    public void applyTexts(String username) {
+    usern.setText(username);
+    }
+    public void openDialog() {
+        Dialogname exampleDialog = new Dialogname();
+        exampleDialog.show(getSupportFragmentManager(), "example dialog");
     }
 }
