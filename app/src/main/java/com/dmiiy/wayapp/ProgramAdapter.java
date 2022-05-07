@@ -16,9 +16,11 @@ import java.util.List;
 
 
 public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHolder>  {
+    private OnRecyclerViewItemClickListener onRecyclerViewItemClickListener;
     private List<ItemObject> listaObjeto;
-    public ProgramAdapter(List<ItemObject> listaObjeto){
+    public ProgramAdapter(List<ItemObject> listaObjeto,OnRecyclerViewItemClickListener onRecyclerViewItemClickListener){
         this.listaObjeto=listaObjeto;
+        this.onRecyclerViewItemClickListener=onRecyclerViewItemClickListener;
     }
     @NonNull
     @Override
@@ -43,7 +45,7 @@ holder.tv_foto.setImageResource(itemObject.getFoto());
         return listaObjeto.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
        public TextView tv_nombre;
        public TextView tv_grupo;
        public ImageView tv_foto;
@@ -53,6 +55,19 @@ holder.tv_foto.setImageResource(itemObject.getFoto());
            tv_nombre=(TextView) itemView.findViewById(R.id.tv_nombre);
            tv_grupo= (TextView) itemView.findViewById(R.id.tv_grupo);
            tv_foto=(ImageView) itemView.findViewById(R.id.iv_foto);
+           itemView.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   onRecyclerViewItemClickListener.onnItemClick(getAdapterPosition());
+               }
+           });
+           itemView.setOnLongClickListener(new View.OnLongClickListener() {
+               @Override
+               public boolean onLongClick(View view) {
+                   onRecyclerViewItemClickListener.onLongItemClick(getAdapterPosition());
+                   return true;
+               }
+           });
        }
    }
 }

@@ -2,6 +2,7 @@ package com.dmiiy.wayapp;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +22,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyBottomSheetFragment extends BottomSheetDialogFragment {
+public class MyBottomSheetFragment extends BottomSheetDialogFragment implements OnRecyclerViewItemClickListener{
 
 private RecyclerView recyclerView;
 private List<ItemObject> itemObjects;
@@ -51,8 +52,19 @@ private List<ItemObject> itemObjects;
         itemObjects.add(new ItemObject("C","Language",R.drawable.c,"23"));
         itemObjects.add(new ItemObject("Google","COMPANY",R.drawable.css3,"25"));
         itemObjects.add(new ItemObject("Google","COMPANY",R.drawable.github,"31"));
-        ProgramAdapter programAdapter = new ProgramAdapter(itemObjects);
+        ProgramAdapter programAdapter = new ProgramAdapter(itemObjects,this);
         recyclerView.setAdapter(programAdapter);
     }
 
+    @Override
+    public void onnItemClick(int position) {
+        if (position==1){
+        Intent intent= new Intent(getContext(),MailLogin.class);
+        startActivity(intent);}
+    }
+
+    @Override
+    public void onLongItemClick(int position) {
+
+    }
 }
