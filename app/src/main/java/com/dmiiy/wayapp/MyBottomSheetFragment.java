@@ -30,9 +30,11 @@ private List<ItemObject> itemObjects;
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        setStyle(STYLE_NORMAL,R.style.AppBottomSheetDialogTheme);
         BottomSheetDialog bottomSheetDialog =(BottomSheetDialog) super.onCreateDialog(savedInstanceState);
         View view= LayoutInflater.from(getContext()).inflate(R.layout.layout_bottom_sheet,null);
         bottomSheetDialog.setContentView(view);
+
         recyclerView=view.findViewById(R.id.rcv_data);
         //LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
         GridLayoutManager gridLayoutManager= new GridLayoutManager(getContext(),2);
@@ -48,7 +50,7 @@ private List<ItemObject> itemObjects;
 
     private void cargarLista() {
         itemObjects=new ArrayList<ItemObject>();
-        itemObjects.add(new ItemObject("Google","COMPANY",R.drawable.google,"22"));
+        itemObjects.add(new ItemObject("Наследие Сталина","На весь день",R.drawable.build7,"22"));
         itemObjects.add(new ItemObject("C","Language",R.drawable.c,"23"));
         itemObjects.add(new ItemObject("Google","COMPANY",R.drawable.css3,"25"));
         itemObjects.add(new ItemObject("Google","COMPANY",R.drawable.github,"31"));
@@ -58,8 +60,8 @@ private List<ItemObject> itemObjects;
 
     @Override
     public void onnItemClick(int position) {
-        if (position==1){
-        Intent intent= new Intent(getContext(),MailLogin.class);
+        if (position==0){
+        Intent intent= new Intent(getContext(),Trip1.class);
         startActivity(intent);}
     }
 

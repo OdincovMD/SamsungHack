@@ -22,20 +22,27 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.dmiiy.wayapp.databinding.ActivityMapsBinding;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,View.OnClickListener{
-    private ImageView imageView;
     private GoogleMap mMap;
-   // private ActivityMapsBinding binding;
-    private ImageButton imageButton;
+    LatLng mLatLng ,mLatl,mLat,mLa,mlaton,mlato,mlatono,mlatonono;
+    String mDescription,mdes,mde,md,mdesco,mdescon,mdescono,mdesconon,act;
+    private ImageButton imageButton,imageView;
     private int ACCESS_LOCATION_REQUEST_CODE = 10001;
 FusedLocationProviderClient fusedLocationProviderClient;
     @Override
@@ -43,25 +50,41 @@ FusedLocationProviderClient fusedLocationProviderClient;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(this);
-        //binding = ActivityMapsBinding.inflate(getLayoutInflater());
-        //setContentView(binding.getRoot());
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        Intent intent = getIntent();
+        mLatLng = intent.getParcelableExtra("latLon");
+        mDescription = intent.getStringExtra("desc");
+        mLatl= intent.getParcelableExtra("latL");
+        mdes = intent.getStringExtra("de");
+        mLat= intent.getParcelableExtra("lat");
+        mde = intent.getStringExtra("d");
+        mLa= intent.getParcelableExtra("la");
+        md = intent.getStringExtra("des");
+        mlato= intent.getParcelableExtra("lant");
+        mdesco = intent.getStringExtra("desca");
+        mlaton= intent.getParcelableExtra("lanta");
+        mdescon = intent.getStringExtra("descan");
+        mlatono= intent.getParcelableExtra("lantano");
+        mdescono = intent.getStringExtra("descara");
+        mlatonono= intent.getParcelableExtra("lantana");
+        mdesconon = intent.getStringExtra("descanra");
+        act=intent.getStringExtra("act");
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        imageView = (ImageView) findViewById(R.id.imageV);
+        imageView= (ImageButton) findViewById(R.id.imageV);
         imageView.setOnClickListener(this);
         imageButton= (ImageButton) findViewById(R.id.btn_open_bottom_sheet);
-        imageButton.setOnClickListener(new View.OnClickListener() {
+        imageButton.setOnClickListener(this);
+        /* imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 clickOpenBottomSheetFragment();
             }
-        });
+        });*/
     }
-
     private void clickOpenBottomSheetFragment() {
         MyBottomSheetFragment myBottomSheetFragment=new MyBottomSheetFragment();
+
         myBottomSheetFragment.show(getSupportFragmentManager(),myBottomSheetFragment.getTag());
     }
     @Override
@@ -72,17 +95,61 @@ FusedLocationProviderClient fusedLocationProviderClient;
                 startActivity(intent);
                 break;
             }
+            case R.id.btn_open_bottom_sheet:{
+                if (act != null){
+                    Intent intent= new Intent(MapsActivity.this,Trip1.class);
+                    startActivity(intent);
+                } else {
+                    clickOpenBottomSheetFragment();
+                }
+                break;
+            }
 
         }
     }
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        if (mLatLng != null) {
+            // Add a marker for location/description sent from MainActivity
+            mMap.addMarker(new MarkerOptions().position(mLatLng).title(mDescription).icon(BitmapDescriptorFactory.fromResource(R.drawable.m1)));
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        }
+        if (mLatl != null) {
+            // Add a marker for location/description sent from MainActivity
+            mMap.addMarker(new MarkerOptions().position(mLatl).title(mdes).icon(BitmapDescriptorFactory.fromResource(R.drawable.m2)));
+
+        }
+        if (mLat != null) {
+            // Add a marker for location/description sent from MainActivity
+            mMap.addMarker(new MarkerOptions().position(mLat).title(mde).icon(BitmapDescriptorFactory.fromResource(R.drawable.m3)));
+
+        }
+        if (mLa != null) {
+            // Add a marker for location/description sent from MainActivity
+            mMap.addMarker(new MarkerOptions().position(mLa).title(md).icon(BitmapDescriptorFactory.fromResource(R.drawable.m4)));
+
+        }
+        if (mlato != null) {
+            // Add a marker for location/description sent from MainActivity
+            mMap.addMarker(new MarkerOptions().position(mlato).title(mdesco).icon(BitmapDescriptorFactory.fromResource(R.drawable.m5)));
+
+        }
+        if (mlaton != null) {
+            // Add a marker for location/description sent from MainActivity
+            mMap.addMarker(new MarkerOptions().position(mlaton).title(mdescon).icon(BitmapDescriptorFactory.fromResource(R.drawable.m6)));
+
+        }
+        if (mlatono != null) {
+            // Add a marker for location/description sent from MainActivity
+            mMap.addMarker(new MarkerOptions().position(mlatono).title(mdescono).icon(BitmapDescriptorFactory.fromResource(R.drawable.m7)));
+
+        }
+        if (mlatonono != null) {
+            // Add a marker for location/description sent from MainActivity
+            mMap.addMarker(new MarkerOptions().position(mlatonono).title(mdesconon).icon(BitmapDescriptorFactory.fromResource(R.drawable.m8)));
+
+        }
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             enableUserLocation();
             zoomToUserLocation();

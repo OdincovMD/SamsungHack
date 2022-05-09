@@ -6,9 +6,12 @@
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17735042735042736" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/btn_sign_in.xml" value="0.2" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/dotted.xml" value="0.18076923076923077" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.17848101265822786" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/kgrugbtn.xml" value="0.1" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/kruglieugli.xml" value="0.17848101265822786" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/persway.xml" value="1.1" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/round_google.xml" value="0.20185185185185187" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/rounddialog.xml" value="0.17848101265822786" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/splash.xml" value="0.17848101265822786" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_dialogname.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_forgetpassword.xml" value="0.20416666666666666" />
@@ -17,7 +20,7 @@
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_mail_login.xml" value="0.22" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_mapbox.xml" value="0.1675213675213675" />
-        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_maps.xml" value="0.1675213675213675" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_maps.xml" value="0.22" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_maps2.xml" value="0.1" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_mapyandex.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_menu_way.xml" value="0.1675213675213675" />
@@ -29,6 +32,7 @@
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_register_user.xml" value="0.22" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_screen.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.1675213675213675" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_trip1.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_trymap.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_way_appmap.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_yandex.xml" value="0.1675213675213675" />
@@ -37,7 +41,9 @@
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/content_nav_menu.xml" value="0.11413043478260869" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/layout_item.xml" value="0.33" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/recyclercard.xml" value="0.3488372093023256" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/reg_window.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/rounddialog.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/uploadinfo.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/menu/menu.xml" value="0.1675213675213675" />
