@@ -18,24 +18,24 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class MailLogin extends AppCompatActivity implements View.OnClickListener{
 private TextView backsignin,forgetpassword;
-private EditText emaillogin,passwordlogin;
+private MaterialEditText emaillogin,passwordlogin;
 private Button login;
-
 private ProgressBar progressBarlogin;
 private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mail_login);
-        backsignin = (TextView) findViewById(R.id.textmailloginback);
+        backsignin = (TextView) findViewById(R.id.textgotoreg);
         backsignin.setOnClickListener(this);
         forgetpassword = (TextView) findViewById(R.id.textmailforgetpas);
         forgetpassword.setOnClickListener(this);
-        emaillogin= (EditText) findViewById(R.id.Emailemaillogin);
-        passwordlogin= (EditText) findViewById(R.id.Passwordemailsignin);
+        emaillogin= (MaterialEditText) findViewById(R.id.Emailemaillogin);
+        passwordlogin= (MaterialEditText) findViewById(R.id.Passwordemailsignin);
         login = (Button) findViewById(R.id.buttonsignin);
         login.setOnClickListener(this);
         progressBarlogin = (ProgressBar) findViewById(R.id.progressBarEmaillogin);
@@ -46,8 +46,8 @@ private FirebaseAuth mAuth;
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.textmailloginback: {
-                Intent intent = new Intent(MailLogin.this, MainActivity.class);
+            case R.id.textgotoreg: {
+                Intent intent = new Intent(MailLogin.this, RegesterWindow.class);
                 startActivity(intent);
                 break;
             }

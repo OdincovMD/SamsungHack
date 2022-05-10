@@ -6,13 +6,19 @@
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17735042735042736" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/btn_sign_in.xml" value="0.2" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/dotted.xml" value="0.18076923076923077" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/ic_baseline_person_menu.xml" value="0.17848101265822786" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.17848101265822786" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/kgrugbtn.xml" value="0.1" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/krugimage.xml" value="0.17848101265822786" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/kruglbtnsign.xml" value="0.17848101265822786" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/kruglieugli.xml" value="0.17848101265822786" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/persway.xml" value="1.1" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/profileiconkrugl.xml" value="0.17848101265822786" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/profway.xml" value="0.17848101265822786" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/round_google.xml" value="0.20185185185185187" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/rounddialog.xml" value="0.17848101265822786" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/drawable/splash.xml" value="0.17848101265822786" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_createroadsplash.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_dialogname.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_forgetpassword.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_googlemap.xml" value="0.335042735042735" />
@@ -31,7 +37,9 @@
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_regester_window.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_register_user.xml" value="0.22" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_screen.xml" value="0.1675213675213675" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_sendletter.xml" value="0.15598290598290598" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.1675213675213675" />
+        <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_splashcreateaccount.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_trip1.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_trymap.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_way_appmap.xml" value="0.20416666666666666" />

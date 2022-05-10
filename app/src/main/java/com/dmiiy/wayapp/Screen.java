@@ -32,17 +32,19 @@ private Handler handler =new Handler();
                 if (isConnected()){
                 if (!isFinishing()) {
                     if (user != null) {
+                        Toast.makeText(Screen.this, "Добро пожаловать !", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(getApplicationContext(), MapsActivity.class));
                         finish();
                     } else {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        Toast.makeText(Screen.this, "Добро пожаловать !", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), MailLogin.class));
                         finish();
                     }
                 }} else {
-                    Toast.makeText(Screen.this, "int", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Screen.this, "Нет подключения к интернету ! Проверьте связь !", Toast.LENGTH_LONG).show();
                 }
             } else {
-                Toast.makeText(Screen.this, "Problemka", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Screen.this, "Включен режим полёта ! Для работы приложения выключите его !", Toast.LENGTH_LONG).show();
             }
         }
     };
@@ -60,10 +62,10 @@ private Handler handler =new Handler();
     }
     public int buttonCheckAirplaneMode (){
         if (Settings.Global.getInt(this.getContentResolver(),Settings.Global.AIRPLANE_MODE_ON,0)!=0){
-            Toast.makeText(getApplicationContext(), "Problem", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Problem", Toast.LENGTH_SHORT).show();
             return 1;
         }else{
-            Toast.makeText(getApplicationContext(), "Ok", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Ok", Toast.LENGTH_SHORT).show();
             return 0;
         }
 

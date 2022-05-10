@@ -4,80 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/white"
     tools:context=".RegesterWindow">
 
-    <TextView
-        android:id="@+id/appnameregwin"
+
+    <ImageView
+        android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/catamaran_semibold"
-        android:text="@string/app"
-        android:textAlignment="center"
-        android:textColor="@color/way"
-        android:textSize="120sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/logo"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/Nameemailreg"
-        android:layout_width="340dp"
+        android:layout_width="315dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:layout_marginTop="35dp"
+        android:hint="Введите полное имя"
         android:inputType="text"
-        android:textSize="24sp"
-        android:hint="@string/fullname"
-        android:textColorHint="@color/way"
         android:textColor="@color/black"
+        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textemailreg" />
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:met_floatingLabel="normal"
+        app:met_singleLineEllipsis="true" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/Emailemailreg"
-        android:layout_width="340dp"
+        android:layout_width="315dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:layout_marginTop="25dp"
+        android:hint="Введите Gmail"
         android:inputType="textEmailAddress"
-        android:textSize="24sp"
-        android:hint="@string/email"
-        android:textColorHint="@color/way"
         android:textColor="@color/black"
+        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Nameemailreg" />
+        app:layout_constraintTop_toBottomOf="@+id/Nameemailreg"
+        app:met_floatingLabel="normal"
+        app:met_singleLineEllipsis="true" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/Passwordemailreg"
-        android:layout_width="340dp"
+        android:layout_width="315dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:layout_marginTop="25dp"
+        android:hint="Введите пароль"
         android:inputType="textPassword"
-        android:textSize="24sp"
-        android:hint="@string/password"
-        android:textColorHint="@color/way"
         android:textColor="@color/black"
+        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Emailemailreg"
-        />
+        app:met_floatingLabel="normal"
+        app:met_singleLineEllipsis="true" />
+
 
     <Button
         android:id="@+id/SignInemailreg"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
-        android:backgroundTint="@color/way"
-        android:text="@string/regaccount"
-        android:textColor="@color/black"
-        android:textSize="24sp"
+        android:layout_width="225dp"
+        android:layout_height="63dp"
+        android:backgroundTint="@color/black"
+        android:text="Создать"
+        android:textColor="@color/white"
+        android:textSize="22sp"
         android:textStyle="bold"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Passwordemailreg" />
@@ -86,29 +83,27 @@
         android:id="@+id/textemailreg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
         android:text="@string/regemailaccount"
-        android:layout_marginBottom="5dp"
-        android:textStyle="italic"
-        android:textSize="20sp"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/appnameregwin"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/logo"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-         />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/backtoregusersfromemailreg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/back"
-        app:layout_constraintTop_toBottomOf="@+id/SignInemailreg"
-        android:layout_marginTop="25dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="35dp"
-        android:textSize="20sp"
-        android:textStyle="normal"
         android:textColor="@color/black"
-        />
+        android:textSize="16sp"
+        android:layout_marginTop="15dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SignInemailreg" />
 
     <ProgressBar
         android:id="@+id/progressBarEmailreg"
@@ -116,12 +111,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

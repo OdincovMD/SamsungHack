@@ -19,12 +19,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class RegesterWindow extends AppCompatActivity implements View.OnClickListener {
-private TextView back,appname,emailsignin;
+private TextView back,emailsignin;
 private FirebaseAuth mAuth;
 private ProgressBar progressBar;
-private EditText editname,editemail,editpassword;
+private MaterialEditText editname,editemail,editpassword;
 private Button buttonreg;
 private DatabaseReference mDatabase;
 
@@ -38,11 +39,11 @@ private DatabaseReference mDatabase;
 
         mAuth = FirebaseAuth.getInstance();
 
-        appname = (TextView) findViewById(R.id.appnameregwin);
+
         emailsignin= (TextView) findViewById(R.id.textemailreg);
-        editemail = (EditText) findViewById(R.id.Emailemailreg);
-        editpassword = (EditText) findViewById(R.id.Passwordemailreg);
-        editname = (EditText) findViewById(R.id.Nameemailreg);
+        editemail = (MaterialEditText) findViewById(R.id.Emailemailreg);
+        editpassword = (MaterialEditText) findViewById(R.id.Passwordemailreg);
+        editname = (MaterialEditText) findViewById(R.id.Nameemailreg);
         progressBar = (ProgressBar) findViewById(R.id.progressBarEmailreg);
         buttonreg =(Button) findViewById(R.id.SignInemailreg);
         buttonreg.setOnClickListener(this);
@@ -52,7 +53,7 @@ private DatabaseReference mDatabase;
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.backtoregusersfromemailreg: {
-                Intent intent = new Intent(RegesterWindow.this, RegisterUser.class);
+                Intent intent = new Intent(RegesterWindow.this, MailLogin.class);
                 startActivity(intent);
                 break;
             }
@@ -107,8 +108,10 @@ private DatabaseReference mDatabase;
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(RegesterWindow.this, "Вы успешно зарегистриваны!", Toast.LENGTH_LONG).show();
+                               // Toast.makeText(RegesterWindow.this, "Вы успешно зарегистриваны!", Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
+                                Intent i =new Intent(getApplicationContext(),splashcreateaccount.class);
+                                startActivity(i);
                             } else {
                                 Toast.makeText(RegesterWindow.this, "Ошибка регистрации! Попробуйте ещё раз!", Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);

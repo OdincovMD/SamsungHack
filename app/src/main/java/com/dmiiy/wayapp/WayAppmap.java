@@ -5,6 +5,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,11 +14,15 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amrdeveloper.lottiedialog.LottieDialog;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -31,16 +37,20 @@ import com.squareup.picasso.Picasso;
 
 public class WayAppmap extends AppCompatActivity implements View.OnClickListener,Dialogname.ExampleDialogListener {
     private ImageView profilepic;
-private Button logoutb;
+private Button logoutb, deletebtn;
 private TextView usern;
-private FirebaseUser user;
-private DatabaseReference reference;
+private FirebaseUser user,prof;
+private DatabaseReference reference,del;
 private String UID;
+private ProgressBar progressBar;
 private StorageReference storageReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_way_appmap);
+        progressBar=(ProgressBar)findViewById(R.id.progressBarprofile) ;
+        progressBar.setVisibility(View.VISIBLE);
+        deletebtn =(Button) findViewById(R.id.deleteac);
 
         usern = (TextView) findViewById(R.id.username);
         usern.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +65,7 @@ private StorageReference storageReference;
             @Override
             public void onSuccess(Uri uri) {
                 Picasso.get().load(uri).into(profilepic);
+                progressBar.setVisibility(View.GONE);
             }
         });
         profilepic= (ImageView) findViewById(R.id.profilepic);
@@ -70,7 +81,7 @@ private StorageReference storageReference;
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(WayAppmap.this,MainActivity.class));
+                startActivity(new Intent(WayAppmap.this,MailLogin.class));
             }
         });
         user =FirebaseAuth.getInstance().getCurrentUser();
@@ -87,12 +98,79 @@ private StorageReference storageReference;
                     String email =userprof.email;
                     nametext.setText(name);
                     emailtext.setText(email);
+                    progressBar.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(WayAppmap.this, "Что-то пошло не так!", Toast.LENGTH_LONG).show();
+            }
+        });
+        deletebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder dialog =new AlertDialog.Builder(WayAppmap.this);
+                dialog.setTitle("deletre");
+                dialog.setMessage("firgnhrivgrigrjgrjrgjjgrjrjrjjfrjj"+"ndefnhfnrrvrnheki");
+                dialog.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        prof =FirebaseAuth.getInstance().getCurrentUser();
+                        deletefromdatabase(prof.getUid());
+                        deletepict(storageReference);
+                        prof.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()){
+                                    Toast.makeText(WayAppmap.this, "Goodbye", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(WayAppmap.this,MailLogin.class));
+                                }else {
+                                    Toast.makeText(WayAppmap.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }
+                });
+               dialog.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                   @Override
+                   public void onClick(DialogInterface dialogInterface, int i) {
+                     dialogInterface.dismiss();
+                   }
+               });
+               AlertDialog alertDialog=dialog.create();
+               alertDialog.show();
+            }
+        });
+    }
+
+    private void deletepict(StorageReference storageReference) {
+        StorageReference delteprofpic= storageReference.child("users/"+FirebaseAuth.getInstance().getCurrentUser().getUid()+"/profile.jpg");
+        delteprofpic.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(WayAppmap.this, "Gb", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(WayAppmap.this,MailLogin.class));
+                }else {
+                    Toast.makeText(WayAppmap.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+
+    private void deletefromdatabase(String uid) {
+        del= FirebaseDatabase.getInstance("https://wayapp-a6d5d-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users").child(uid);
+        del.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(WayAppmap.this, "fb", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(WayAppmap.this,MailLogin.class));
+                }else {
+                    Toast.makeText(WayAppmap.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -103,7 +181,7 @@ private StorageReference storageReference;
         if (requestCode==1000){
             if (resultCode== Activity.RESULT_OK){
                 Uri imageUri = data.getData();
-                //profilepic.setImageURI(imageUri);
+                profilepic.setImageURI(imageUri);//changes i did
                 uploadimagetofirebase(imageUri);
             }
         }

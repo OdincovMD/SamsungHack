@@ -141,7 +141,7 @@ private Button btntripback, notify;
         switch (clickedItemIndex){
             case 0: //first item in Recycler view
             {
-                mIntent  = new Intent(Trip1.this, FIrstplace.class);
+                mIntent  = new Intent(Trip1.this, createroadsplash.class);
                 startActivity(mIntent);
                 break;}
            /* case 1: //second item in Recycler view

@@ -4,119 +4,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MailLogin"
-    android:background="@color/background"
-    >
-    <TextView
-        android:id="@+id/appnameloginwin"
+    android:background="@color/white"
+    tools:context=".MailLogin">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/catamaran_semibold"
-        android:text="@string/app"
-        android:textAlignment="center"
-        android:textColor="@color/way"
-        android:textSize="120sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/logo"
         app:layout_constraintTop_toTopOf="parent" />
     <TextView
-        android:id="@+id/textemaillogin"
+        android:id="@+id/textemailreg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/regemailaccount"
-        android:layout_marginBottom="5dp"
-        android:textStyle="italic"
+        android:layout_marginBottom="17dp"
+        android:text="Вход в аккаунт"
+        android:textColor="@color/black"
         android:textSize="20sp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/appnameloginwin"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/logo"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        />
+        app:layout_constraintRight_toRightOf="parent" />
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/Emailemaillogin"
-        android:layout_width="340dp"
+        android:layout_width="315dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:layout_marginTop="25dp"
+        android:hint="Введите Gmail"
         android:inputType="textEmailAddress"
-        android:textSize="24sp"
-        android:hint="@string/email"
-        android:textColorHint="@color/way"
         android:textColor="@color/black"
+        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textemaillogin" />
-    <EditText
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:met_floatingLabel="normal"
+        app:met_singleLineEllipsis="true" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/Passwordemailsignin"
-        android:layout_width="340dp"
+        android:layout_width="315dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:layout_marginTop="25dp"
-        android:inputType="textPassword"
-        android:textSize="24sp"
         android:hint="@string/password"
-        android:textColorHint="@color/way"
+        android:inputType="textPassword"
         android:textColor="@color/black"
+        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Emailemaillogin"
-        />
+        app:met_floatingLabel="normal"
+        app:met_singleLineEllipsis="true" />
 
     <Button
         android:id="@+id/buttonsignin"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
+        android:layout_width="225dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/black"
         android:text="@string/signin"
-        app:layout_constraintTop_toBottomOf="@+id/Passwordemailsignin"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="25dp"
-        android:backgroundTint="@color/way"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/Passwordemailsignin" />
 
-    <TextView
-        android:id="@+id/textmailforgetpas"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/forgotpassword"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/buttonsignin"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/buttonsignin"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="25dp"
-        />
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/textgotoreg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Зарегестрироваться"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            tools:layout_editor_absoluteY="525dp" />
+        <TextView
+            android:id="@+id/textmailforgetpas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Забыли пароль ?"
+            android:layout_marginLeft="25dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="525dp" />
 
-    <TextView
-        android:id="@+id/textmailloginback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/back"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/buttonsignin"
-        app:layout_constraintTop_toBottomOf="@+id/buttonsignin"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="25dp"
-        />
+
+    </LinearLayout>
     <ProgressBar
         android:id="@+id/progressBarEmaillogin"
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

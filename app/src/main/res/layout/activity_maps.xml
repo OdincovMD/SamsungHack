@@ -17,8 +17,8 @@
         android:id="@+id/btn_open_bottom_sheet"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:background="@drawable/kgrugbtn"
-android:layout_marginBottom="370dp"
+        android:background="@drawable/profileiconkrugl"
+        android:layout_marginBottom="310dp"
         android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
