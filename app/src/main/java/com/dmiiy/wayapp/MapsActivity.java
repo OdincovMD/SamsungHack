@@ -112,47 +112,49 @@ FusedLocationProviderClient fusedLocationProviderClient;
         mMap = googleMap;
         if (mLatLng != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mLatLng).title(mDescription).icon(BitmapDescriptorFactory.fromResource(R.drawable.m1)));
+            mMap.addMarker(new MarkerOptions().position(mLatLng).title(mDescription).icon(BitmapDescriptorFactory.fromResource(R.drawable.m1full)));
 
         }
         if (mLatl != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mLatl).title(mdes).icon(BitmapDescriptorFactory.fromResource(R.drawable.m2)));
+            mMap.addMarker(new MarkerOptions().position(mLatl).title(mdes).icon(BitmapDescriptorFactory.fromResource(R.drawable.m2full)));
 
         }
         if (mLat != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mLat).title(mde).icon(BitmapDescriptorFactory.fromResource(R.drawable.m3)));
+            mMap.addMarker(new MarkerOptions().position(mLat).title(mde).icon(BitmapDescriptorFactory.fromResource(R.drawable.m3full)));
 
         }
         if (mLa != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mLa).title(md).icon(BitmapDescriptorFactory.fromResource(R.drawable.m4)));
+            mMap.addMarker(new MarkerOptions().position(mLa).title(md).icon(BitmapDescriptorFactory.fromResource(R.drawable.m4full)));
 
         }
         if (mlato != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mlato).title(mdesco).icon(BitmapDescriptorFactory.fromResource(R.drawable.m5)));
+            mMap.addMarker(new MarkerOptions().position(mlato).title(mdesco).icon(BitmapDescriptorFactory.fromResource(R.drawable.m5full)));
 
         }
         if (mlaton != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mlaton).title(mdescon).icon(BitmapDescriptorFactory.fromResource(R.drawable.m6)));
+            mMap.addMarker(new MarkerOptions().position(mlaton).title(mdescon).icon(BitmapDescriptorFactory.fromResource(R.drawable.m6full)));
 
         }
         if (mlatono != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mlatono).title(mdescono).icon(BitmapDescriptorFactory.fromResource(R.drawable.m7)));
+            mMap.addMarker(new MarkerOptions().position(mlatono).title(mdescono).icon(BitmapDescriptorFactory.fromResource(R.drawable.m7full)));
 
         }
         if (mlatonono != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mlatonono).title(mdesconon).icon(BitmapDescriptorFactory.fromResource(R.drawable.m8)));
+            mMap.addMarker(new MarkerOptions().position(mlatonono).title(mdesconon).icon(BitmapDescriptorFactory.fromResource(R.drawable.m8full)));
 
         }
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             enableUserLocation();
-            zoomToUserLocation();
+            //zoomToUserLocation();
+            LatLng center =new LatLng(55.751135,37.617315);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(center,9));
         } else {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
                 //We can show user a dialog why this permission is necessary
@@ -184,7 +186,9 @@ FusedLocationProviderClient fusedLocationProviderClient;
         if (requestCode == ACCESS_LOCATION_REQUEST_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 enableUserLocation();
-                zoomToUserLocation();
+                //zoomToUserLocation();
+                LatLng center =new LatLng(55.751135,37.617315);
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(center,9));
             } else {
                 //We can show a dialog that permission is not granted...
             }

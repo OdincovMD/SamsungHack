@@ -5,11 +5,13 @@ import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
@@ -17,6 +19,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.dmiiy.wayapp.HelperClasses.adapterphone;
 import com.dmiiy.wayapp.HelperClasses.phonehelper;
@@ -31,6 +34,7 @@ public class Trip1 extends AppCompatActivity implements adapterphone.ListItemCli
 private Button btntripback, notify;
     RecyclerView phoneRecycler;
     RecyclerView.Adapter adapter;
+    private TextView startdialog,back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +43,15 @@ private Button btntripback, notify;
         phoneRecycler = findViewById(R.id.my_recycler);
         phoneRecycler();
         checkBox=(CheckBox) findViewById(R.id.checkBoxt1);
-       btntripback= (Button) findViewById(R.id.buttonback);
+        back=(TextView)findViewById(R.id.backtoregusersfromtrip1);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Trip1.this,MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+       btntripback= (Button) findViewById(R.id.buttonbacktr1);
        btntripback.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
@@ -49,10 +61,10 @@ private Button btntripback, notify;
 
            }
        });
-       notify=(Button) findViewById(R.id.btnnotify);
+       /*notify=(Button) findViewById(R.id.btnnotify);
        notify.setOnClickListener(new View.OnClickListener() {
            @Override
-           public void onClick(View view) {
+           public void onClick(View view) {*/
               // ShowNotification();
               /* String message="This is a notification example";
                 NotificationCompat.Builder builder=new NotificationCompat.Builder(
@@ -70,63 +82,79 @@ private Button btntripback, notify;
                 builder.setContentIntent(pendingIntent);
                 NotificationManager notificationManager=(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 notificationManager.notify(0,builder.build());*/
-           }
-       });
+        //   }
+    //   });
+        startdialog=(TextView) findViewById(R.id.alertdialoginfotrip1);
+        startdialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder dialog =new AlertDialog.Builder(Trip1.this);
+                dialog.setTitle("Наследие Сталина");
+                dialog.setMessage("Это уникальная экскурсионная программа, которая была составлена с учетом многих факторов. Мы сможете посетить все Сталинские высотки, которые были постоены в Москве. Также по-вашему желанию (отметив галочкой ^Добавить посещение кафе^ ) вам будет отмечено на карте шикарное место, где вы сможете прочувствовать атмосферу СССР и заодно вкусно покушать ! P.S.:информацию о всех высотках вы можете посмотреть не выходя с этой странички, вам надо только нажать на картинку обЪкта о котором вы хотите узнать. + Бонус: ссылки на дополнительную информацию! Удачи в путешествиях!");
+                dialog.setNegativeButton("Закрыть", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                AlertDialog alertDialog=dialog.create();
+                alertDialog.show();
+            }
+        });
     }
     public void gotoLocation(View v){
-        LatLng goToLocation = new LatLng(34.5392354, 69.1378334);
-        LatLng goloc = new LatLng(32.5392354, 69.1378334);
-        LatLng golo = new LatLng(30.5392354, 69.1378334);
-        LatLng gol = new LatLng(39.5392354, 69.1378334);
-        LatLng golon = new LatLng(37.5392354, 69.1378334);
-        LatLng golono = new LatLng(45.5392354, 69.1378334);
-        LatLng golonan = new LatLng(37.5392354, 65.1378334);
+        LatLng goToLocation = new LatLng(55.702888, 37.530582);
+        LatLng goloc = new LatLng(55.747153, 37.642825);
+        LatLng golo = new LatLng(55.769512, 37.649268);
+        LatLng gol = new LatLng(55.774089, 37.651642);
+        LatLng golon = new LatLng(55.751419, 37.565557);
+        LatLng golono = new LatLng(55.759235, 37.580903);
+        LatLng golonan = new LatLng(55.745654, 37.584859);
        // LatLng golonana = new LatLng(45.5392354, 60.1378334);
         Bundle args = new Bundle();
         args.putParcelable("latLon", goToLocation);
-        args.putString("act","t1");
-        args.putString("desc", "Marker in Kabul");
+        args.putString("t1","1");
+        args.putString("desc", "МГУ");
         args.putParcelable("latL", goloc);
-        args.putString("de", "Marker in Kabul");
+        args.putString("de", "Высотка на Котельнической набережной");
         args.putParcelable("lat", golo);
-        args.putString("d", "Marker in Kabul");
+        args.putString("d", "Высотка на площади Красных Ворот");
         args.putParcelable("la", gol);
-        args.putString("des", "Marker in Kabul");
+        args.putString("des", "Гостиница <Ленинградская>");
         args.putParcelable("lant", golon);
-        args.putString("desca", "Marker in Kabul");
+        args.putString("desca", "Гостиница <Украина>");
         args.putParcelable("lanta", golono);
-        args.putString("descan", "Marker in Kabul");
+        args.putString("descan", "Высотка на Кудринской площади");
         args.putParcelable("lantano", golonan);
-        args.putString("descara", "Marker in Kabul");
+        args.putString("descara", "МИД ");
         if (checkBox.isChecked()){
-        LatLng golonana = new LatLng(45.5392354, 60.1378334);
+        LatLng golonana = new LatLng(55.749877, 37.593471);
         args.putParcelable("lantana", golonana);
-        args.putString("descanra", "Marker in Kabul");}
-        Intent i = new Intent(this, MapsActivity.class);
+        args.putString("descanra", "Вареничная №1");
+            //args.putString("check1","1");
+        }
+
+        Intent i = new Intent(this, createroadsplash.class);
         i.putExtras(args);
         startActivity(i);
     }
 
     private void phoneRecycler() {
 
-        //All Gradients
-        GradientDrawable gradient2 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffe5d4b8, 0xffe5d4b8});
-        GradientDrawable gradient1 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xff7adccf, 0xff7adccf});
-        GradientDrawable gradient3 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xfff7c59f, 0xFFf7c59f});
-        GradientDrawable gradient4 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0xffb8d7f5, 0xffb8d7f5});
+
 
 
         phoneRecycler.setHasFixedSize(true);
         phoneRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         ArrayList<phonehelper> phonelocations = new ArrayList<>();
-        phonelocations.add(new phonehelper( R.drawable.mgu10, "МГУ"));
-        phonelocations.add(new phonehelper(R.drawable.kot11, "Высотка на Котельнической набережной"));
-        phonelocations.add(new phonehelper( R.drawable.krasv6, "Высотка на площади Красных Ворот"));
-        phonelocations.add(new phonehelper( R.drawable.lenin10, "Гостиница <Ленинградская>"));
-        phonelocations.add(new phonehelper( R.drawable.ukr10, "Гостиница <Украина>"));
-        phonelocations.add(new phonehelper( R.drawable.kudri10, "Высотка на Кудринской площади"));
-        phonelocations.add(new phonehelper( R.drawable.mid10, "МИД"));
+        phonelocations.add(new phonehelper( R.drawable.mgu10, "МГУ",R.drawable.m1full));
+        phonelocations.add(new phonehelper(R.drawable.kot11, "Высотка на Котельнической набережной",R.drawable.m2full));
+        phonelocations.add(new phonehelper( R.drawable.krasv6, "Высотка на площади Красных Ворот",R.drawable.m3full));
+        phonelocations.add(new phonehelper( R.drawable.lenin10, "Гостиница <Ленинградская>",R.drawable.m4full));
+        phonelocations.add(new phonehelper( R.drawable.ukr10, "Гостиница <Украина>",R.drawable.m5full));
+        phonelocations.add(new phonehelper( R.drawable.kudri10, "Высотка на Кудринской площади",R.drawable.m6full));
+        phonelocations.add(new phonehelper( R.drawable.mid10, "МИД",R.drawable.m7full));
 
 
         adapter = new adapterphone(phonelocations,this);
@@ -139,11 +167,11 @@ private Button btntripback, notify;
 
         Intent mIntent;
         switch (clickedItemIndex){
-            case 0: //first item in Recycler view
-            {
-                mIntent  = new Intent(Trip1.this, createroadsplash.class);
-                startActivity(mIntent);
-                break;}
+            //case 0: //first item in Recycler view
+           // {
+               // mIntent  = new Intent(Trip1.this, createroadsplash.class);
+               // startActivity(mIntent);
+               // break;}
            /* case 1: //second item in Recycler view
                 mIntent = new Intent(Trip1.this, vivo.class);
                 startActivity(mIntent);
