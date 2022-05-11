@@ -12,7 +12,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:lottie_rawRes="@raw/reggood"
+        app:lottie_rawRes="@raw/sentmes"
         android:elevation="5dp"
         app:lottie_autoPlay="true"
         android:layout_marginTop="60dp"

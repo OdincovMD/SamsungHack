@@ -19,19 +19,33 @@
             android:id="@+id/phone_image"
             android:layout_width="95dp"
             android:layout_height="252dp"
-            android:src="@drawable/kot11" />
+            android:src="@drawable/kot11"
+            />
 
         <TextView
+            android:gravity="center"
             android:id="@+id/phone_title"
             android:layout_width="170dp"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-
+android:textColor="@color/black"
             android:text="Высотка на Котельнической набережной"
 
             android:layout_marginTop="90dp"
             android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imagemark"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="53dp"
+            android:layout_marginRight="52dp"
+            android:layout_marginTop="35dp"
+            android:layout_toEndOf="@+id/phone_image"
+            android:src="@drawable/m1full" />
 
 
     </RelativeLayout>

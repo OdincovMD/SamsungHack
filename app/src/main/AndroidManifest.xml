@@ -26,6 +26,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WayApp">
         <activity
+            android:name=".Trip2"
+            android:exported="false" />
+        <activity
             android:name=".sendletter"
             android:exported="false" />
         <activity

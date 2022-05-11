@@ -51,9 +51,9 @@ private List<ItemObject> itemObjects;
     private void cargarLista() {
         itemObjects=new ArrayList<ItemObject>();
         itemObjects.add(new ItemObject("Наследие Сталина","На весь день",R.drawable.build7,"22"));
-        itemObjects.add(new ItemObject("C","Language",R.drawable.c,"23"));
-        itemObjects.add(new ItemObject("Google","COMPANY",R.drawable.css3,"25"));
-        itemObjects.add(new ItemObject("Google","COMPANY",R.drawable.github,"31"));
+        itemObjects.add(new ItemObject("Погружение в Азию","Фуд-трип",R.drawable.asian,"23"));
+        itemObjects.add(new ItemObject("Топ мест Москвы","Туристичкий тур",R.drawable.moscow,"25"));
+        itemObjects.add(new ItemObject("Старые времена","Полное погружение",R.drawable.kolom,"31"));
         ProgramAdapter programAdapter = new ProgramAdapter(itemObjects,this);
         recyclerView.setAdapter(programAdapter);
     }
@@ -63,6 +63,10 @@ private List<ItemObject> itemObjects;
         if (position==0){
         Intent intent= new Intent(getContext(),Trip1.class);
         startActivity(intent);}
+        if (position==1){
+            Intent intent= new Intent(getContext(),Trip2.class);
+            startActivity(intent);
+        }
     }
 
     @Override

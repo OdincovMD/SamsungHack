@@ -5,13 +5,14 @@ import android.graphics.drawable.GradientDrawable;
 
 public class phonehelper {
 
-    int image;
+    int image,mark;
     String title;
 
 
-    public phonehelper( int image, String title) {
+    public phonehelper( int image, String title,int mark) {
         this.image = image;
         this.title = title;
+        this.mark=mark;
 
     }
 
@@ -22,4 +23,9 @@ public class phonehelper {
     public String getTitle() {
         return title;
     }
+
+    public int getMark() {
+        return mark;
+    }
+
 }
