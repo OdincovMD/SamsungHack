@@ -135,9 +135,9 @@ public class Trip2 extends AppCompatActivity implements adapterphone.ListItemCli
         phoneRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         ArrayList<phonehelper> phonelocations = new ArrayList<>();
-        phonelocations.add(new phonehelper( R.drawable.mgu10, "ЧИХО",R.drawable.m1full));
-        phonelocations.add(new phonehelper(R.drawable.kot11, "RAMEN",R.drawable.m2full));
-        phonelocations.add(new phonehelper( R.drawable.krasv6, "НИППОН",R.drawable.m3full));
+        phonelocations.add(new phonehelper( R.drawable.mgu10, "ЧИХО"));
+        phonelocations.add(new phonehelper(R.drawable.kot11, "RAMEN"));
+        phonelocations.add(new phonehelper( R.drawable.krasv6, "НИППОН"));
 
 
 

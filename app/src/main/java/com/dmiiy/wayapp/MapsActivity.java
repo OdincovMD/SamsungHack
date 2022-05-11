@@ -112,42 +112,42 @@ FusedLocationProviderClient fusedLocationProviderClient;
         mMap = googleMap;
         if (mLatLng != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mLatLng).title(mDescription).icon(BitmapDescriptorFactory.fromResource(R.drawable.m1full)));
+            mMap.addMarker(new MarkerOptions().position(mLatLng).title(mDescription).icon(BitmapDescriptorFactory.fromResource(R.drawable.m1)));
 
         }
         if (mLatl != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mLatl).title(mdes).icon(BitmapDescriptorFactory.fromResource(R.drawable.m2full)));
+            mMap.addMarker(new MarkerOptions().position(mLatl).title(mdes).icon(BitmapDescriptorFactory.fromResource(R.drawable.m2)));
 
         }
         if (mLat != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mLat).title(mde).icon(BitmapDescriptorFactory.fromResource(R.drawable.m3full)));
+            mMap.addMarker(new MarkerOptions().position(mLat).title(mde).icon(BitmapDescriptorFactory.fromResource(R.drawable.m3)));
 
         }
         if (mLa != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mLa).title(md).icon(BitmapDescriptorFactory.fromResource(R.drawable.m4full)));
+            mMap.addMarker(new MarkerOptions().position(mLa).title(md).icon(BitmapDescriptorFactory.fromResource(R.drawable.m4)));
 
         }
         if (mlato != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mlato).title(mdesco).icon(BitmapDescriptorFactory.fromResource(R.drawable.m5full)));
+            mMap.addMarker(new MarkerOptions().position(mlato).title(mdesco).icon(BitmapDescriptorFactory.fromResource(R.drawable.m5)));
 
         }
         if (mlaton != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mlaton).title(mdescon).icon(BitmapDescriptorFactory.fromResource(R.drawable.m6full)));
+            mMap.addMarker(new MarkerOptions().position(mlaton).title(mdescon).icon(BitmapDescriptorFactory.fromResource(R.drawable.m6)));
 
         }
         if (mlatono != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mlatono).title(mdescono).icon(BitmapDescriptorFactory.fromResource(R.drawable.m7full)));
+            mMap.addMarker(new MarkerOptions().position(mlatono).title(mdescono).icon(BitmapDescriptorFactory.fromResource(R.drawable.m7)));
 
         }
         if (mlatonono != null) {
             // Add a marker for location/description sent from MainActivity
-            mMap.addMarker(new MarkerOptions().position(mlatonono).title(mdesconon).icon(BitmapDescriptorFactory.fromResource(R.drawable.m8full)));
+            mMap.addMarker(new MarkerOptions().position(mlatonono).title(mdesconon).icon(BitmapDescriptorFactory.fromResource(R.drawable.m8)));
 
         }
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {

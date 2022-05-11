@@ -148,13 +148,13 @@ private Button btntripback, notify;
         phoneRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         ArrayList<phonehelper> phonelocations = new ArrayList<>();
-        phonelocations.add(new phonehelper( R.drawable.mgu10, "МГУ",R.drawable.m1full));
-        phonelocations.add(new phonehelper(R.drawable.kot11, "Высотка на Котельнической набережной",R.drawable.m2full));
-        phonelocations.add(new phonehelper( R.drawable.krasv6, "Высотка на площади Красных Ворот",R.drawable.m3full));
-        phonelocations.add(new phonehelper( R.drawable.lenin10, "Гостиница <Ленинградская>",R.drawable.m4full));
-        phonelocations.add(new phonehelper( R.drawable.ukr10, "Гостиница <Украина>",R.drawable.m5full));
-        phonelocations.add(new phonehelper( R.drawable.kudri10, "Высотка на Кудринской площади",R.drawable.m6full));
-        phonelocations.add(new phonehelper( R.drawable.mid10, "МИД",R.drawable.m7full));
+        phonelocations.add(new phonehelper( R.drawable.mgu10, "МГУ"));
+        phonelocations.add(new phonehelper(R.drawable.kot11, "Высотка на Котельнической набережной"));
+        phonelocations.add(new phonehelper( R.drawable.krasv6, "Высотка на площади Красных Ворот"));
+        phonelocations.add(new phonehelper( R.drawable.lenin10, "Гостиница <Ленинградская>"));
+        phonelocations.add(new phonehelper( R.drawable.ukr10, "Гостиница <Украина>"));
+        phonelocations.add(new phonehelper( R.drawable.kudri10, "Высотка на Кудринской площади"));
+        phonelocations.add(new phonehelper( R.drawable.mid10, "МИД"));
 
 
         adapter = new adapterphone(phonelocations,this);

@@ -41,7 +41,7 @@ public class adapterphone extends RecyclerView.Adapter<adapterphone.PhoneViewHol
         phonehelper phonehelper = phoneLaocations.get(position);
         holder.image.setImageResource(phonehelper.getImage());
         holder.title.setText(phonehelper.getTitle());
-        holder.image.setImageResource(phonehelper.getMark());
+        //holder.image.setImageResource(phonehelper.getMark());
        // holder.relativeLayout.setBackground(phonehelper.getgradient());
     }
 
@@ -58,7 +58,7 @@ public class adapterphone extends RecyclerView.Adapter<adapterphone.PhoneViewHol
     public class PhoneViewHold extends RecyclerView.ViewHolder implements View.OnClickListener {
 
 
-        ImageView image,mark;
+        ImageView image;
         TextView title;
 
         RelativeLayout relativeLayout;
@@ -71,7 +71,7 @@ public class adapterphone extends RecyclerView.Adapter<adapterphone.PhoneViewHol
 
             image = itemView.findViewById(R.id.phone_image);
             title = itemView.findViewById(R.id.phone_title);
-            mark = itemView.findViewById(R.id.imagemark);
+            //mark = itemView.findViewById(R.id.imagemark);
             //relativeLayout = itemView.findViewById(R.id.background_color);
 
         }

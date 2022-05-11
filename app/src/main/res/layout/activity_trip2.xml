@@ -34,7 +34,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Наследие Сталина"
+        android:text="Погружение в Азию"
         android:textStyle="bold"
         android:textSize="25sp"
         android:layout_marginTop="20dp"
@@ -55,11 +55,11 @@
 
     <ImageView
         android:layout_gravity="center"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="27dp"
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        app:srcCompat="@drawable/lasttri1" />
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/trip2last" />
 
 
 

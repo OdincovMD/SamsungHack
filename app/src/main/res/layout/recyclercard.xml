@@ -38,14 +38,14 @@ android:textColor="@color/black"
         <ImageView
             android:id="@+id/imagemark"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="20dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="53dp"
             android:layout_marginRight="52dp"
             android:layout_marginTop="35dp"
             android:layout_toEndOf="@+id/phone_image"
-            android:src="@drawable/m1full" />
+             />
 
 
     </RelativeLayout>
