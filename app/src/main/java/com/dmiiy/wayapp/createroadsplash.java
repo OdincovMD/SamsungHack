@@ -12,7 +12,7 @@ import com.google.android.gms.maps.model.LatLng;
 public class createroadsplash extends AppCompatActivity {
 LottieAnimationView lottie;
     LatLng mLatLng ,mLatl,mLat,mLa,mlaton,mlato,mlatono,mlatonono;
-    String mDescription,mdes,mde,md,mdesco,mdescon,mdescono,mdesconon,act1,act2;
+    String mDescription,mdes,mde,md,mdesco,mdescon,mdescono,mdesconon,act1,act2,act3,act4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +46,9 @@ LottieAnimationView lottie;
 
         act1=intent.getStringExtra("t1");
         act2=intent.getStringExtra("t2");
+        act3=intent.getStringExtra("t3");
+        act4=intent.getStringExtra("t4");
+
        // check1=intent.getStringExtra("check1");
         Handler handler= new Handler();
         handler.postDelayed(new Runnable() {
@@ -96,7 +99,40 @@ LottieAnimationView lottie;
                  i.putExtras(args);
                  startActivity(i);
              }
+                if (act3 !=null) {
+                    Bundle args = new Bundle();
+                    args.putParcelable("latLon", mLatLng);
+                    args.putString("desc", mDescription);
 
+                    args.putParcelable("latL", mLatl);
+                    args.putString("de", mdes);
+
+                    args.putParcelable("lat", mLat);
+                    args.putString("d", mde);
+
+                    args.putParcelable("la", mLa);
+                    args.putString("des", md);
+                    if (mlato != null){
+                        args.putParcelable("lant", mlato);
+                        args.putString("desca", mdesco);
+                    }
+                    Intent i = new Intent(createroadsplash.this, MapsActivity.class);
+                    i.putExtras(args);
+                    startActivity(i);
+                }
+                if (act4 !=null) {
+                    Bundle args = new Bundle();
+                    args.putParcelable("latLon", mLatLng);
+                    args.putString("desc", mDescription);
+
+                    if (mLatl != null){
+                        args.putParcelable("latL", mLatl);
+                        args.putString("de", mdes);
+                    }
+                    Intent i = new Intent(createroadsplash.this, MapsActivity.class);
+                    i.putExtras(args);
+                    startActivity(i);
+                }
             }
         },5000);
     }

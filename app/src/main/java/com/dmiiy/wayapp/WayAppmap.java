@@ -14,6 +14,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,6 +45,7 @@ private DatabaseReference reference,del;
 private String UID;
 private ProgressBar progressBar;
 private StorageReference storageReference;
+private LinearLayout support,about;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,9 +113,9 @@ private StorageReference storageReference;
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder dialog =new AlertDialog.Builder(WayAppmap.this);
-                dialog.setTitle("deletre");
-                dialog.setMessage("firgnhrivgrigrjgrjrgjjgrjrjrjjfrjj"+"ndefnhfnrrvrnheki");
-                dialog.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                dialog.setTitle("Вы уверены?");
+                dialog.setMessage("При удаление аккаунта дальнейший вход будет невозможен.Нужна повторная регистрация !");
+                dialog.setPositiveButton("Удалить", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         prof =FirebaseAuth.getInstance().getCurrentUser();
@@ -123,7 +125,7 @@ private StorageReference storageReference;
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()){
-                                    Toast.makeText(WayAppmap.this, "Goodbye", Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(WayAppmap.this, "Goodbye", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(WayAppmap.this,MailLogin.class));
                                 }else {
                                     Toast.makeText(WayAppmap.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -132,7 +134,7 @@ private StorageReference storageReference;
                         });
                     }
                 });
-               dialog.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+               dialog.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
                    @Override
                    public void onClick(DialogInterface dialogInterface, int i) {
                      dialogInterface.dismiss();
@@ -150,7 +152,7 @@ private StorageReference storageReference;
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(WayAppmap.this, "Gb", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(WayAppmap.this, "Gb", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(WayAppmap.this,MailLogin.class));
                 }else {
                     Toast.makeText(WayAppmap.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -166,7 +168,7 @@ private StorageReference storageReference;
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(WayAppmap.this, "fb", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(WayAppmap.this, "fb", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(WayAppmap.this,MailLogin.class));
                 }else {
                     Toast.makeText(WayAppmap.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();

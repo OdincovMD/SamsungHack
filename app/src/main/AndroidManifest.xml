@@ -26,6 +26,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WayApp">
         <activity
+            android:name=".tr1_7"
+            android:exported="false" />
+        <activity
+            android:name=".tr1_6"
+            android:exported="false" />
+        <activity
+            android:name=".tr1_5"
+            android:exported="false" />
+        <activity
+            android:name=".tr1_4"
+            android:exported="false" />
+        <activity
+            android:name=".tr1_3"
+            android:exported="false" />
+        <activity
+            android:name=".tr1_2"
+            android:exported="false" />
+        <activity
+            android:name=".tr1_1"
+            android:exported="false" />
+        <activity
+            android:name=".Trip4"
+            android:exported="false" />
+        <activity
+            android:name=".Trip3"
+            android:exported="false" />
+        <activity
             android:name=".Trip2"
             android:exported="false" />
         <activity

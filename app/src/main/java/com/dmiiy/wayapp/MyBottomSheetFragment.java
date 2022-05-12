@@ -67,6 +67,14 @@ private List<ItemObject> itemObjects;
             Intent intent= new Intent(getContext(),Trip2.class);
             startActivity(intent);
         }
+        if (position==2){
+            Intent intent= new Intent(getContext(),Trip3.class);
+            startActivity(intent);
+        }
+        if (position==3){
+            Intent intent= new Intent(getContext(),Trip4.class);
+            startActivity(intent);
+        }
     }
 
     @Override

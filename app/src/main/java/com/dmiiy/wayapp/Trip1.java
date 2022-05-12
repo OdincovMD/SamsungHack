@@ -148,13 +148,13 @@ private Button btntripback, notify;
         phoneRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         ArrayList<phonehelper> phonelocations = new ArrayList<>();
-        phonelocations.add(new phonehelper( R.drawable.mgu10, "МГУ"));
-        phonelocations.add(new phonehelper(R.drawable.kot11, "Высотка на Котельнической набережной"));
-        phonelocations.add(new phonehelper( R.drawable.krasv6, "Высотка на площади Красных Ворот"));
-        phonelocations.add(new phonehelper( R.drawable.lenin10, "Гостиница <Ленинградская>"));
-        phonelocations.add(new phonehelper( R.drawable.ukr10, "Гостиница <Украина>"));
-        phonelocations.add(new phonehelper( R.drawable.kudri10, "Высотка на Кудринской площади"));
-        phonelocations.add(new phonehelper( R.drawable.mid10, "МИД"));
+        phonelocations.add(new phonehelper( R.drawable.mgu10, "№1 МГУ"));
+        phonelocations.add(new phonehelper(R.drawable.kot11, "№2 Высотка на Котельнической набережной"));
+        phonelocations.add(new phonehelper( R.drawable.krasv6, "№3 Высотка на площади Красных Ворот"));
+        phonelocations.add(new phonehelper( R.drawable.lenin10, "№4 Гостиница <Ленинградская>"));
+        phonelocations.add(new phonehelper( R.drawable.ukr10, "№5 Гостиница <Украина>"));
+        phonelocations.add(new phonehelper( R.drawable.kudri10, "№6 Высотка на Кудринской площади"));
+        phonelocations.add(new phonehelper( R.drawable.mid10, "№7 МИД"));
 
 
         adapter = new adapterphone(phonelocations,this);
@@ -167,28 +167,35 @@ private Button btntripback, notify;
 
         Intent mIntent;
         switch (clickedItemIndex){
-            //case 0: //first item in Recycler view
-           // {
-               // mIntent  = new Intent(Trip1.this, createroadsplash.class);
-               // startActivity(mIntent);
-               // break;}
-           /* case 1: //second item in Recycler view
-                mIntent = new Intent(Trip1.this, vivo.class);
+           case 0: //first item in Recycler view
+           {
+               mIntent  = new Intent(Trip1.this, tr1_1.class);
+               startActivity(mIntent);
+                break;}
+          case 1: //second item in Recycler view
+                mIntent = new Intent(Trip1.this, tr1_2.class);
                 startActivity(mIntent);
                 break;
             case 2: //third item in Recycler view
-                mIntent = new Intent(Trip1.this, apple.class);
+                mIntent = new Intent(Trip1.this, tr1_3.class);
                 startActivity(mIntent);
                 break;
             case 3: //third item in Recycler view
-                mIntent = new Intent(Trip1.this, realme.class);
+                mIntent = new Intent(Trip1.this, tr1_4.class);
                 startActivity(mIntent);
                 break;
             case 4: //third item in Recycler view
-                mIntent = new Intent(Trip1.this, poco.class);
+                mIntent = new Intent(Trip1.this, tr1_5.class);
                 startActivity(mIntent);
-                break;*/
-
+                break;
+            case 5: //third item in Recycler view
+                mIntent = new Intent(Trip1.this, tr1_6.class);
+                startActivity(mIntent);
+                break;
+            case 6: //third item in Recycler view
+                mIntent = new Intent(Trip1.this, tr1_7.class);
+                startActivity(mIntent);
+                break;
         }
 
 
