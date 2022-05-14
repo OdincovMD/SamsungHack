@@ -14,14 +14,7 @@ public class tr1_3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tr13);
-        back=(TextView) findViewById(R.id.backtoregusersfromtrip13);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i =new Intent(getApplicationContext(),Trip1.class);
-                startActivity(i);
-            }
-        });
+
         openlink= (TextView) findViewById(R.id.openlink13);
         openlink.setOnClickListener(new View.OnClickListener() {
             @Override

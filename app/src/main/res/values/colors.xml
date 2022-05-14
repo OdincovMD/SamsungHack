@@ -27,4 +27,10 @@
     <color name="card5">#e27c6f</color>
     <color name="card6">#c9e3db</color>
     <color name="card7">#86d098</color>
+    <color name="gradient_start_color">#4c84ff</color>
+    <color name="gradient_end_color">#18a3fe</color>
+
+    <color name="tab_indicatir_gray">#c0c0c0</color>
+    <color name="intro_title_color">#000000</color>
+    <color name="intro_description_color">#656565</color>
 </resources>

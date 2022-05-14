@@ -111,17 +111,20 @@ public class Trip3 extends AppCompatActivity implements adapterphone.ListItemCli
         Bundle args = new Bundle();
         args.putString("t3","1");
         args.putParcelable("latLon", goToLocation);
-        args.putString("desc", "МГУ");
-        args.putParcelable("latL", goloc);
-        args.putString("de", "Высотка на Котельнической набережной");
-        args.putParcelable("lat", golo);
-        args.putString("d", "Высотка на площади Красных Ворот");
-        args.putParcelable("la", gol);
+        args.putString("desc", "Парк Зарядье");
 
+        args.putParcelable("latL", goloc);
+        args.putString("de", "Красная площадь");
+
+        args.putParcelable("lat", golo);
+        args.putString("d", "Большой театр");
+
+        args.putParcelable("la", gol);
+        args.putString("des", "Центральный детский мир");
         if (checkBox.isChecked()){
             LatLng golonana = new LatLng(55.749877, 37.593471);
-            args.putParcelable("lantana", golonana);
-            args.putString("descanra", "Вареничная №1");
+            args.putParcelable("lant", golonana);
+            args.putString("desca", "ЛЕПИМ и ВАРИМ ");
             //args.putString("check1","1");
         }
 
@@ -139,10 +142,10 @@ public class Trip3 extends AppCompatActivity implements adapterphone.ListItemCli
         phoneRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         ArrayList<phonehelper> phonelocations = new ArrayList<>();
-        phonelocations.add(new phonehelper( R.drawable.mgu10, "МГУ"));
-        phonelocations.add(new phonehelper(R.drawable.kot11, "Высотка на Котельнической набережной"));
-        phonelocations.add(new phonehelper( R.drawable.krasv6, "Высотка на площади Красных Ворот"));
-        phonelocations.add(new phonehelper( R.drawable.lenin10, "Гостиница <Ленинградская>"));
+        phonelocations.add(new phonehelper( R.drawable.mgu10, "Парк Зарядье"));
+        phonelocations.add(new phonehelper(R.drawable.kot11, "Красная площадь"));
+        phonelocations.add(new phonehelper( R.drawable.krasv6, "Большой театр"));
+        phonelocations.add(new phonehelper( R.drawable.lenin10, "Центральный детский мир"));
 
         adapter = new adapterphone(phonelocations,this);
         phoneRecycler.setAdapter(adapter);

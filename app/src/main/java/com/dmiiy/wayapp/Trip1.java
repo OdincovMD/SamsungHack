@@ -90,7 +90,7 @@ private Button btntripback, notify;
             public void onClick(View view) {
                 AlertDialog.Builder dialog =new AlertDialog.Builder(Trip1.this);
                 dialog.setTitle("Наследие Сталина");
-                dialog.setMessage("Это уникальная экскурсионная программа, которая была составлена с учетом многих факторов. Мы сможете посетить все Сталинские высотки, которые были постоены в Москве. Также по-вашему желанию (отметив галочкой ^Добавить посещение кафе^ ) вам будет отмечено на карте шикарное место, где вы сможете прочувствовать атмосферу СССР и заодно вкусно покушать ! P.S.:информацию о всех высотках вы можете посмотреть не выходя с этой странички, вам надо только нажать на картинку обЪкта о котором вы хотите узнать. + Бонус: ссылки на дополнительную информацию! Удачи в путешествиях!");
+                dialog.setMessage("Это уникальная экскурсионная программа, которая была составлена с учетом многих факторов. Вы сможете посетить все Сталинские высотки, которые были постоены. Также по-вашему желанию (отметив галочкой ^Добавить посещение кафе^ ) на карте также будет отмечено шикарное место, где вы сможете прочувствовать атмосферу СССР и заодно вкусно покушать ! P.S.:информацию о всех высотках вы можете посмотреть не выходя с этой странички, вам надо только нажать на картинку обЪкта о котором вы хотите узнать. + Бонус: ссылки на дополнительную информацию! Удачи в путешествиях!");
                 dialog.setNegativeButton("Закрыть", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -112,15 +112,19 @@ private Button btntripback, notify;
         LatLng golonan = new LatLng(55.745654, 37.584859);
        // LatLng golonana = new LatLng(45.5392354, 60.1378334);
         Bundle args = new Bundle();
-        args.putParcelable("latLon", goToLocation);
         args.putString("t1","1");
+        args.putParcelable("latLon", goToLocation);
         args.putString("desc", "МГУ");
+
         args.putParcelable("latL", goloc);
         args.putString("de", "Высотка на Котельнической набережной");
+
         args.putParcelable("lat", golo);
         args.putString("d", "Высотка на площади Красных Ворот");
+
         args.putParcelable("la", gol);
         args.putString("des", "Гостиница <Ленинградская>");
+
         args.putParcelable("lant", golon);
         args.putString("desca", "Гостиница <Украина>");
         args.putParcelable("lanta", golono);

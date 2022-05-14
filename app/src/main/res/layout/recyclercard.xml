@@ -19,7 +19,7 @@
             android:id="@+id/phone_image"
             android:layout_width="95dp"
             android:layout_height="252dp"
-            android:src="@drawable/ram"
+            android:src="@drawable/chiho1"
             android:scaleType="fitStart"
             android:adjustViewBounds="true"
             />

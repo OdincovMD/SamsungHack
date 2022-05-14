@@ -88,8 +88,8 @@ public class Trip2 extends AppCompatActivity implements adapterphone.ListItemCli
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder dialog =new AlertDialog.Builder(Trip2.this);
-                dialog.setTitle("Наследие Сталина");
-                dialog.setMessage("Это уникальная экскурсионная программа, которая была составлена с учетом многих факторов. Мы сможете посетить все Сталинские высотки, которые были постоены в Москве. Также по-вашему желанию (отметив галочкой ^Добавить посещение кафе^ ) вам будет отмечено на карте шикарное место, где вы сможете прочувствовать атмосферу СССР и заодно вкусно покушать ! P.S.:информацию о всех высотках вы можете посмотреть не выходя с этой странички, вам надо только нажать на картинку обЪкта о котором вы хотите узнать. + Бонус: ссылки на дополнительную информацию! Удачи в путешествиях!");
+                dialog.setTitle("Погружение в Азию");
+                dialog.setMessage("Это уникальная в своем виде программа, которая сможет вас погрузить в азиатскуюОстановить маршрут культуру даже никуда не уезжая из Москвы. Маршрут предполагает посещение 3 мест. №1-Чихо здесь я вам рекомендую пообедать и насладится атмосферой настоящего Китая. №2- RAMEN это уже заведение с японской кухней,вкотором можно насладиться нежными десертами,которые тесно связаны со страной восходящего солнца. №3-НИППОН- японский супермаркет в центре Москвы.Там можно набрать кучу вкусняшек,которые можно потрескать дома. Это замечательное путешествие по азиатской гастрономии:) Удачи в путешествиях!");
                 dialog.setNegativeButton("Закрыть", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -102,9 +102,9 @@ public class Trip2 extends AppCompatActivity implements adapterphone.ListItemCli
         });
     }
     public void gotoLocation(View v){
-        LatLng goToLocation = new LatLng(40.5392354, 69.1378334);
-        LatLng goloc = new LatLng(41.5392354, 69.1378334);
-        LatLng golo = new LatLng(42.5392354, 69.1378334);
+        LatLng goToLocation = new LatLng(55.761945, 37.635885);
+        LatLng goloc = new LatLng(55.772174, 37.619604);
+        LatLng golo = new LatLng(55.769323, 37.620780);
 
         Bundle args = new Bundle();
         args.putString("t2","1");
@@ -132,9 +132,9 @@ public class Trip2 extends AppCompatActivity implements adapterphone.ListItemCli
         phoneRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         ArrayList<phonehelper> phonelocations = new ArrayList<>();
-        phonelocations.add(new phonehelper( R.drawable.chiho, "№1 ЧИХО"));
-        phonelocations.add(new phonehelper(R.drawable.nip1, "№2 RAMEN"));
-        phonelocations.add(new phonehelper( R.drawable.ram, "№3 НИППОН"));
+        phonelocations.add(new phonehelper( R.drawable.chiho1, "№1 ЧИХО"));
+        phonelocations.add(new phonehelper(R.drawable.ram, "№2 RAMEN"));
+        phonelocations.add(new phonehelper( R.drawable.nip1, "№3 НИППОН"));
 
 
 

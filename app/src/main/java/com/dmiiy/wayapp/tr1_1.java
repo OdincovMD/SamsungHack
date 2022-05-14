@@ -14,14 +14,7 @@ private TextView back,openlink;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tr11);
-        back=(TextView) findViewById(R.id.backtoregusersfromtrip11);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i =new Intent(getApplicationContext(),Trip1.class);
-                startActivity(i);
-            }
-        });
+
         openlink= (TextView) findViewById(R.id.openlink11);
         openlink.setOnClickListener(new View.OnClickListener() {
             @Override
