@@ -23,7 +23,8 @@ public class splashcreateaccount extends AppCompatActivity {
             public void run() {
                 Intent i = new Intent(getApplicationContext(),MailLogin.class);
                 startActivity(i);
+                finish();
             }
-        },3000);
+        },3500);
     }
 }

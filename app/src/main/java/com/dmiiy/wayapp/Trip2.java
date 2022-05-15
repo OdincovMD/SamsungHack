@@ -13,7 +13,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,14 +21,14 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import com.dmiiy.wayapp.HelperClasses.adapterphone;
-import com.dmiiy.wayapp.HelperClasses.phonehelper;
+import com.dmiiy.wayapp.HelperClasses.adaptertrip;
+import com.dmiiy.wayapp.HelperClasses.triphelper;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Trip2 extends AppCompatActivity implements adapterphone.ListItemClickListener{
+public class Trip2 extends AppCompatActivity implements adaptertrip.ListItemClickListener{
     private CheckBox checkBox;
     private Button btntripback, notify;
     RecyclerView phoneRecycler;
@@ -89,7 +88,7 @@ public class Trip2 extends AppCompatActivity implements adapterphone.ListItemCli
             public void onClick(View view) {
                 AlertDialog.Builder dialog =new AlertDialog.Builder(Trip2.this);
                 dialog.setTitle("Погружение в Азию");
-                dialog.setMessage("Это уникальная в своем виде программа, которая сможет вас погрузить в азиатскуюОстановить маршрут культуру даже никуда не уезжая из Москвы. Маршрут предполагает посещение 3 мест. №1-Чихо здесь я вам рекомендую пообедать и насладится атмосферой настоящего Китая. №2- RAMEN это уже заведение с японской кухней,вкотором можно насладиться нежными десертами,которые тесно связаны со страной восходящего солнца. №3-НИППОН- японский супермаркет в центре Москвы.Там можно набрать кучу вкусняшек,которые можно потрескать дома. Это замечательное путешествие по азиатской гастрономии:) Удачи в путешествиях!");
+                dialog.setMessage("Это уникальная в своем виде программа, которая сможет вас погрузить в азиатскую культуру даже не уезжая из Москвы. Маршрут предполагает посещение 3 мест. №1-Чихо, здесь я вам рекомендую пообедать и насладится атмосферой настоящего Китая. №2- RAMEN - это уже заведение с японской кухней,вкотором можно насладиться нежными десертами,которые тесно связаны со страной восходящего солнца. №3-НИППОН- японский супермаркет в центре Москвы.Там можно набрать кучу вкусняшек,которые можно потрескать дома. Это замечательное путешествие по азиатской гастрономии:) Удачи в путешествиях!");
                 dialog.setNegativeButton("Закрыть", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -121,6 +120,7 @@ public class Trip2 extends AppCompatActivity implements adapterphone.ListItemCli
         Intent i = new Intent(this, createroadsplash.class);
         i.putExtras(args);
         startActivity(i);
+        finish();
     }
 
     private void phoneRecycler() {
@@ -131,14 +131,14 @@ public class Trip2 extends AppCompatActivity implements adapterphone.ListItemCli
         phoneRecycler.setHasFixedSize(true);
         phoneRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        ArrayList<phonehelper> phonelocations = new ArrayList<>();
-        phonelocations.add(new phonehelper( R.drawable.chiho1, "№1 ЧИХО"));
-        phonelocations.add(new phonehelper(R.drawable.ram, "№2 RAMEN"));
-        phonelocations.add(new phonehelper( R.drawable.nip1, "№3 НИППОН"));
+        ArrayList<triphelper> phonelocations = new ArrayList<>();
+        phonelocations.add(new triphelper( R.drawable.chiho1, "№1 ЧИХО"));
+        phonelocations.add(new triphelper(R.drawable.ram, "№2 RAMEN"));
+        phonelocations.add(new triphelper( R.drawable.nip1, "№3 НИППОН"));
 
 
 
-        adapter = new adapterphone(phonelocations,this);
+        adapter = new adaptertrip(phonelocations,this);
         phoneRecycler.setAdapter(adapter);
 
     }

@@ -16,10 +16,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class Dialogname extends AppCompatDialogFragment {
 
-    private EditText editTextUsername;
+    private MaterialEditText editTextUsername;
     private ExampleDialogListener listener;
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -34,17 +35,22 @@ public class Dialogname extends AppCompatDialogFragment {
         reference= FirebaseDatabase.getInstance("https://wayapp-a6d5d-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users");
         UID=user.getUid();
         builder.setView(view)
-                .setTitle("Login")
-                .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                .setTitle("Поменять имя")
+                .setNegativeButton("Отменить", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
                     }
                 })
-                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Сменить", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String username = editTextUsername.getText().toString();
+                        if(username.isEmpty()){
+                            editTextUsername.setError("Заполните строку с именем!");
+                            editTextUsername.requestFocus();
+                            return;
+                        }
                         listener.applyTexts(username);
                         reference.child(UID).child("name").setValue(username);
                     }

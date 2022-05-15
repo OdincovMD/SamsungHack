@@ -20,14 +20,14 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import com.dmiiy.wayapp.HelperClasses.adapterphone;
-import com.dmiiy.wayapp.HelperClasses.phonehelper;
+import com.dmiiy.wayapp.HelperClasses.adaptertrip;
+import com.dmiiy.wayapp.HelperClasses.triphelper;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Trip4 extends AppCompatActivity implements adapterphone.ListItemClickListener{
+public class Trip4 extends AppCompatActivity implements adaptertrip.ListItemClickListener{
     private CheckBox checkBox;
     private Button btntripback, notify;
     RecyclerView phoneRecycler;
@@ -87,8 +87,8 @@ public class Trip4 extends AppCompatActivity implements adapterphone.ListItemCli
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder dialog =new AlertDialog.Builder(Trip4.this);
-                dialog.setTitle("Наследие Сталина");
-                dialog.setMessage("Это уникальная экскурсионная программа, которая была составлена с учетом многих факторов. Мы сможете посетить все Сталинские высотки, которые были постоены в Москве. Также по-вашему желанию (отметив галочкой ^Добавить посещение кафе^ ) вам будет отмечено на карте шикарное место, где вы сможете прочувствовать атмосферу СССР и заодно вкусно покушать ! P.S.:информацию о всех высотках вы можете посмотреть не выходя с этой странички, вам надо только нажать на картинку обЪкта о котором вы хотите узнать. + Бонус: ссылки на дополнительную информацию! Удачи в путешествиях!");
+                dialog.setTitle("Старые времена");
+                dialog.setMessage("Этот тур предполагает посещение прекрасного места под названием ^Коломенское^.Здесь вы сможете прогуляться по красивому парку и насладиться строениями прошлых веков. Это прогулка освободит вас суеты современного мира ! Также по-вашему желанию (отметив галочкой ^Добавить посещение кафе^ ) на карте также будет отмечено шикарное место, где вы сможете пнасладиться настоящими русскими блюдами. P.S.: Я вам отметил самые интересные места и по нажатию на них вы сможете узнать информацию. + Бонус: ссылки на дополнительную информацию! Удачи в путешествиях!");
                 dialog.setNegativeButton("Закрыть", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -101,44 +101,39 @@ public class Trip4 extends AppCompatActivity implements adapterphone.ListItemCli
         });
     }
     public void gotoLocation(View v){
-        LatLng goToLocation = new LatLng(55.702888, 37.530582);
+        LatLng goToLocation = new LatLng(55.661760, 37.663445);
 
         Bundle args = new Bundle();
         args.putString("t4","1");
         args.putParcelable("latLon", goToLocation);
-        args.putString("desc", "МГУ");
+        args.putString("desc", "Музей-заповедник ^Коломенское^");
 
         if (checkBox.isChecked()){
-            LatLng golonana = new LatLng(55.749877, 37.593471);
-            args.putParcelable("lantana", golonana);
-            args.putString("descanra", "Вареничная №1");
+            LatLng goloc = new LatLng(55.651841, 37.604651);
+            args.putParcelable("latL", goloc);
+            args.putString("de", "Ресторан ^Русское Подворье^");
             //args.putString("check1","1");
         }
 
         Intent i = new Intent(this, createroadsplash.class);
         i.putExtras(args);
         startActivity(i);
+        finish();
     }
 
     private void phoneRecycler() {
 
 
-
-
         phoneRecycler.setHasFixedSize(true);
         phoneRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        ArrayList<phonehelper> phonelocations = new ArrayList<>();
-        phonelocations.add(new phonehelper( R.drawable.mgu10, "МГУ"));
-        phonelocations.add(new phonehelper(R.drawable.kot11, "Высотка на Котельнической набережной"));
-        phonelocations.add(new phonehelper( R.drawable.krasv6, "Высотка на площади Красных Ворот"));
-        phonelocations.add(new phonehelper( R.drawable.lenin10, "Гостиница <Ленинградская>"));
-        phonelocations.add(new phonehelper( R.drawable.ukr10, "Гостиница <Украина>"));
-        phonelocations.add(new phonehelper( R.drawable.kudri10, "Высотка на Кудринской площади"));
-        phonelocations.add(new phonehelper( R.drawable.mid10, "МИД"));
+        ArrayList<triphelper> phonelocations = new ArrayList<>();
+        phonelocations.add(new triphelper( R.drawable.kolom11, "Деревянный дворец царя Алексея Михайловича"));
+        phonelocations.add(new triphelper(R.drawable.domik, "Домик Петра I"));
+        phonelocations.add(new triphelper( R.drawable.palata, "Полковничьи палаты"));
 
 
-        adapter = new adapterphone(phonelocations,this);
+        adapter = new adaptertrip(phonelocations,this);
         phoneRecycler.setAdapter(adapter);
 
     }
@@ -148,27 +143,19 @@ public class Trip4 extends AppCompatActivity implements adapterphone.ListItemCli
 
         Intent mIntent;
         switch (clickedItemIndex){
-            //case 0: //first item in Recycler view
-            // {
-            // mIntent  = new Intent(Trip1.this, createroadsplash.class);
-            // startActivity(mIntent);
-            // break;}
-           /* case 1: //second item in Recycler view
-                mIntent = new Intent(Trip1.this, vivo.class);
+            case 0: //first item in Recycler view
+             {
+             mIntent  = new Intent(Trip4.this, tr4_1.class);
+            startActivity(mIntent);
+             break;}
+            case 1: //second item in Recycler view
+                mIntent = new Intent(Trip4.this, tr4_2.class);
                 startActivity(mIntent);
                 break;
             case 2: //third item in Recycler view
-                mIntent = new Intent(Trip1.this, apple.class);
+                mIntent = new Intent(Trip4.this, tr4_3.class);
                 startActivity(mIntent);
                 break;
-            case 3: //third item in Recycler view
-                mIntent = new Intent(Trip1.this, realme.class);
-                startActivity(mIntent);
-                break;
-            case 4: //third item in Recycler view
-                mIntent = new Intent(Trip1.this, poco.class);
-                startActivity(mIntent);
-                break;*/
 
         }
 

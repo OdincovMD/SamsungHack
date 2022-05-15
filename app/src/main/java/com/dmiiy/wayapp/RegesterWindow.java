@@ -112,6 +112,7 @@ private DatabaseReference mDatabase;
                                 progressBar.setVisibility(View.GONE);
                                 Intent i =new Intent(getApplicationContext(),splashcreateaccount.class);
                                 startActivity(i);
+                                finish();
                             } else {
                                 Toast.makeText(RegesterWindow.this, "Ошибка регистрации! Попробуйте ещё раз!", Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);

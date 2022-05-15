@@ -1,13 +1,11 @@
 package com.dmiiy.wayapp;
 
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,9 +15,9 @@ import java.util.List;
 
 public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHolder>  {
     private OnRecyclerViewItemClickListener onRecyclerViewItemClickListener;
-    private List<ItemObject> listaObjeto;
-    public ProgramAdapter(List<ItemObject> listaObjeto,OnRecyclerViewItemClickListener onRecyclerViewItemClickListener){
-        this.listaObjeto=listaObjeto;
+    private List<ItemObject> listatrips;
+    public ProgramAdapter(List<ItemObject> listatrips, OnRecyclerViewItemClickListener onRecyclerViewItemClickListener){
+        this.listatrips = listatrips;
         this.onRecyclerViewItemClickListener=onRecyclerViewItemClickListener;
     }
     @NonNull
@@ -33,28 +31,28 @@ public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-final ItemObject itemObject=listaObjeto.get(position);
-holder.tv_nombre.setText(itemObject.getNombre());
-holder.tv_grupo.setText(itemObject.getGrupo());
-holder.tv_foto.setImageResource(itemObject.getFoto());
+final ItemObject itemObject= listatrips.get(position);
+holder.tv_tripname.setText(itemObject.getTripname());
+holder.tv_abouttrip.setText(itemObject.getNote());
+holder.tv_photo.setImageResource(itemObject.getPhoto());
     }
 
     @Override
     public int getItemCount() {
 
-        return listaObjeto.size();
+        return listatrips.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-       public TextView tv_nombre;
-       public TextView tv_grupo;
-       public ImageView tv_foto;
+       public TextView tv_tripname;
+       public TextView tv_abouttrip;
+       public ImageView tv_photo;
 
        public ViewHolder(@NonNull View itemView) {
            super(itemView);
-           tv_nombre=(TextView) itemView.findViewById(R.id.tv_nombre);
-           tv_grupo= (TextView) itemView.findViewById(R.id.tv_grupo);
-           tv_foto=(ImageView) itemView.findViewById(R.id.iv_foto);
+           tv_tripname =(TextView) itemView.findViewById(R.id.tv_nombre);
+           tv_abouttrip = (TextView) itemView.findViewById(R.id.tv_grupo);
+           tv_photo =(ImageView) itemView.findViewById(R.id.iv_foto);
            itemView.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {

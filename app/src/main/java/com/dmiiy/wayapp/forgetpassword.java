@@ -67,6 +67,7 @@ FirebaseAuth auth;
                 if (task.isSuccessful()){
                    // Toast.makeText(forgetpassword.this, "Проверьте свою почту для восстановления пароля", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(forgetpassword.this,sendletter.class));
+                    finish();
                 }else {
                     Toast.makeText(forgetpassword.this, "Попробуйте ещё раз! Что-то пошло не так", Toast.LENGTH_LONG).show();
                 }

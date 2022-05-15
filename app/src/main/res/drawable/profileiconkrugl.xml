@@ -7,7 +7,7 @@
     </item>
     <item>
 
-        <bitmap android:src="@drawable/flag"
+        <bitmap android:src="@drawable/placeholder"
             android:gravity="center"/>
     </item>
 </layer-list>

@@ -13,7 +13,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -21,15 +20,14 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import com.dmiiy.wayapp.HelperClasses.adapterphone;
-import com.dmiiy.wayapp.HelperClasses.phonehelper;
-import com.dmiiy.wayapp.tripfirst.FIrstplace;
+import com.dmiiy.wayapp.HelperClasses.adaptertrip;
+import com.dmiiy.wayapp.HelperClasses.triphelper;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Trip1 extends AppCompatActivity implements adapterphone.ListItemClickListener{
+public class Trip1 extends AppCompatActivity implements adaptertrip.ListItemClickListener{
     private CheckBox checkBox;
 private Button btntripback, notify;
     RecyclerView phoneRecycler;
@@ -90,7 +88,7 @@ private Button btntripback, notify;
             public void onClick(View view) {
                 AlertDialog.Builder dialog =new AlertDialog.Builder(Trip1.this);
                 dialog.setTitle("Наследие Сталина");
-                dialog.setMessage("Это уникальная экскурсионная программа, которая была составлена с учетом многих факторов. Вы сможете посетить все Сталинские высотки, которые были постоены. Также по-вашему желанию (отметив галочкой ^Добавить посещение кафе^ ) на карте также будет отмечено шикарное место, где вы сможете прочувствовать атмосферу СССР и заодно вкусно покушать ! P.S.:информацию о всех высотках вы можете посмотреть не выходя с этой странички, вам надо только нажать на картинку обЪкта о котором вы хотите узнать. + Бонус: ссылки на дополнительную информацию! Удачи в путешествиях!");
+                dialog.setMessage("Это уникальная экскурсионная программа, которая была составлена с учетом многих факторов. Вы сможете посетить все Сталинские высотки, которые были постоены. Также по-вашему желанию (отметив галочкой ^Добавить посещение кафе^ ) на карте также будет отмечено шикарное место, где вы сможете прочувствовать атмосферу СССР и заодно вкусно покушать ! P.S.:информацию о всех высотках вы можете посмотреть не выходя с этой странички, вам надо только нажать на картинку обЪекта, о котором вы хотите узнать. + Бонус: ссылки на дополнительную информацию! Удачи в путешествиях!");
                 dialog.setNegativeButton("Закрыть", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -141,6 +139,7 @@ private Button btntripback, notify;
         Intent i = new Intent(this, createroadsplash.class);
         i.putExtras(args);
         startActivity(i);
+        finish();
     }
 
     private void phoneRecycler() {
@@ -151,17 +150,17 @@ private Button btntripback, notify;
         phoneRecycler.setHasFixedSize(true);
         phoneRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        ArrayList<phonehelper> phonelocations = new ArrayList<>();
-        phonelocations.add(new phonehelper( R.drawable.mgu10, "№1 МГУ"));
-        phonelocations.add(new phonehelper(R.drawable.kot11, "№2 Высотка на Котельнической набережной"));
-        phonelocations.add(new phonehelper( R.drawable.krasv6, "№3 Высотка на площади Красных Ворот"));
-        phonelocations.add(new phonehelper( R.drawable.lenin10, "№4 Гостиница <Ленинградская>"));
-        phonelocations.add(new phonehelper( R.drawable.ukr10, "№5 Гостиница <Украина>"));
-        phonelocations.add(new phonehelper( R.drawable.kudri10, "№6 Высотка на Кудринской площади"));
-        phonelocations.add(new phonehelper( R.drawable.mid10, "№7 МИД"));
+        ArrayList<triphelper> phonelocations = new ArrayList<>();
+        phonelocations.add(new triphelper( R.drawable.mgu10, "№1 МГУ"));
+        phonelocations.add(new triphelper(R.drawable.kot11, "№2 Высотка на Котельнической набережной"));
+        phonelocations.add(new triphelper( R.drawable.krasv6, "№3 Высотка на площади Красных Ворот"));
+        phonelocations.add(new triphelper( R.drawable.lenin10, "№4 Гостиница <Ленинградская>"));
+        phonelocations.add(new triphelper( R.drawable.ukr10, "№5 Гостиница <Украина>"));
+        phonelocations.add(new triphelper( R.drawable.kudri10, "№6 Высотка на Кудринской площади"));
+        phonelocations.add(new triphelper( R.drawable.mid10, "№7 МИД"));
 
 
-        adapter = new adapterphone(phonelocations,this);
+        adapter = new adaptertrip(phonelocations,this);
         phoneRecycler.setAdapter(adapter);
 
     }

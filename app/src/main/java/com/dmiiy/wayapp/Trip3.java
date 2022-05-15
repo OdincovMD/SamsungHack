@@ -20,17 +20,17 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import com.dmiiy.wayapp.HelperClasses.adapterphone;
-import com.dmiiy.wayapp.HelperClasses.phonehelper;
+import com.dmiiy.wayapp.HelperClasses.adaptertrip;
+import com.dmiiy.wayapp.HelperClasses.triphelper;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Trip3 extends AppCompatActivity implements adapterphone.ListItemClickListener{
+public class Trip3 extends AppCompatActivity implements adaptertrip.ListItemClickListener{
     private CheckBox checkBox;
     private Button btntripback, notify;
-    RecyclerView phoneRecycler;
+    RecyclerView tripRecycler;
     RecyclerView.Adapter adapter;
     private TextView startdialog,back;
 
@@ -38,7 +38,7 @@ public class Trip3 extends AppCompatActivity implements adapterphone.ListItemCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trip3);
-        phoneRecycler = findViewById(R.id.my_recycler3);
+        tripRecycler = findViewById(R.id.my_recycler3);
         phoneRecycler();
         checkBox=(CheckBox) findViewById(R.id.checkBoxt3);
         back=(TextView)findViewById(R.id.backtoregusersfromtrip3);
@@ -87,8 +87,8 @@ public class Trip3 extends AppCompatActivity implements adapterphone.ListItemCli
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder dialog =new AlertDialog.Builder(Trip3.this);
-                dialog.setTitle("Наследие Сталина");
-                dialog.setMessage("Это уникальная экскурсионная программа, которая была составлена с учетом многих факторов. Мы сможете посетить все Сталинские высотки, которые были постоены в Москве. Также по-вашему желанию (отметив галочкой ^Добавить посещение кафе^ ) вам будет отмечено на карте шикарное место, где вы сможете прочувствовать атмосферу СССР и заодно вкусно покушать ! P.S.:информацию о всех высотках вы можете посмотреть не выходя с этой странички, вам надо только нажать на картинку обЪкта о котором вы хотите узнать. + Бонус: ссылки на дополнительную информацию! Удачи в путешествиях!");
+                dialog.setTitle("Топ мест Москвы");
+                dialog.setMessage("Это топ мест,которые обязан посетить каждый турист или житель города. Эти места заслуживают вашего внимания. И обязательно надо сказать,что в этих местах получаются просто шикарные фотографии! Также по-вашему желанию (отметив галочкой ^Добавить посещение кафе^ ) на карте также будет отмечено шикарное место, где вы сможете покушать вкусную русскую еду! Мне кажется этот маршрут очень насыщенный. P.S.:информацию о всех местах вы можете посмотреть не выходя с этой странички, вам надо только нажать на картинку обЪекта, о котором вы хотите узнать. + Бонус: ссылки на дополнительную информацию! Удачи в путешествиях!");
                 dialog.setNegativeButton("Закрыть", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -101,10 +101,10 @@ public class Trip3 extends AppCompatActivity implements adapterphone.ListItemCli
         });
     }
     public void gotoLocation(View v){
-        LatLng goToLocation = new LatLng(55.702888, 37.530582);
-        LatLng goloc = new LatLng(55.747153, 37.642825);
-        LatLng golo = new LatLng(55.769512, 37.649268);
-        LatLng gol = new LatLng(55.774089, 37.651642);
+        LatLng goToLocation = new LatLng(55.751038, 37.628193);
+        LatLng goloc = new LatLng(55.753110, 37.621745);
+        LatLng golo = new LatLng(55.760143, 37.618507);
+        LatLng gol = new LatLng(55.760188, 37.625138);
         //LatLng golon = new LatLng(55.751419, 37.565557);
 
 
@@ -122,7 +122,7 @@ public class Trip3 extends AppCompatActivity implements adapterphone.ListItemCli
         args.putParcelable("la", gol);
         args.putString("des", "Центральный детский мир");
         if (checkBox.isChecked()){
-            LatLng golonana = new LatLng(55.749877, 37.593471);
+            LatLng golonana = new LatLng(55.763293, 37.615074);
             args.putParcelable("lant", golonana);
             args.putString("desca", "ЛЕПИМ и ВАРИМ ");
             //args.putString("check1","1");
@@ -131,6 +131,7 @@ public class Trip3 extends AppCompatActivity implements adapterphone.ListItemCli
         Intent i = new Intent(this, createroadsplash.class);
         i.putExtras(args);
         startActivity(i);
+        finish();
     }
 
     private void phoneRecycler() {
@@ -138,46 +139,42 @@ public class Trip3 extends AppCompatActivity implements adapterphone.ListItemCli
 
 
 
-        phoneRecycler.setHasFixedSize(true);
-        phoneRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        tripRecycler.setHasFixedSize(true);
+        tripRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        ArrayList<phonehelper> phonelocations = new ArrayList<>();
-        phonelocations.add(new phonehelper( R.drawable.mgu10, "Парк Зарядье"));
-        phonelocations.add(new phonehelper(R.drawable.kot11, "Красная площадь"));
-        phonelocations.add(new phonehelper( R.drawable.krasv6, "Большой театр"));
-        phonelocations.add(new phonehelper( R.drawable.lenin10, "Центральный детский мир"));
+        ArrayList<triphelper> phonelocations = new ArrayList<>();
+        phonelocations.add(new triphelper( R.drawable.zar, "№1 Парк Зарядье"));
+        phonelocations.add(new triphelper(R.drawable.plosh, "№2 Красная площадь"));
+        phonelocations.add(new triphelper( R.drawable.theatre, "№3 Большой театр"));
+        phonelocations.add(new triphelper( R.drawable.cdm, "№4 Центральный детский мир"));
 
-        adapter = new adapterphone(phonelocations,this);
-        phoneRecycler.setAdapter(adapter);
+        adapter = new adaptertrip(phonelocations,this);
+        tripRecycler.setAdapter(adapter);
 
     }
 
     @Override
     public void onphoneListClick(int clickedItemIndex) {
-
         Intent mIntent;
         switch (clickedItemIndex){
-            //case 0: //first item in Recycler view
-            // {
-            // mIntent  = new Intent(Trip1.this, createroadsplash.class);
-            // startActivity(mIntent);
-            // break;}
-           /* case 1: //second item in Recycler view
-                mIntent = new Intent(Trip1.this, vivo.class);
+            case 0: //first item in Recycler view
+            {
+                mIntent  = new Intent(Trip3.this, tr3_1.class);
+                startActivity(mIntent);
+                break;}
+            case 1: //second item in Recycler view
+                mIntent = new Intent(Trip3.this, tr3_2.class);
                 startActivity(mIntent);
                 break;
             case 2: //third item in Recycler view
-                mIntent = new Intent(Trip1.this, apple.class);
+                mIntent = new Intent(Trip3.this, tr3_3.class);
                 startActivity(mIntent);
                 break;
             case 3: //third item in Recycler view
-                mIntent = new Intent(Trip1.this, realme.class);
+                mIntent = new Intent(Trip3.this, tr3_4.class);
                 startActivity(mIntent);
                 break;
-            case 4: //third item in Recycler view
-                mIntent = new Intent(Trip1.this, poco.class);
-                startActivity(mIntent);
-                break;*/
+
 
         }
 

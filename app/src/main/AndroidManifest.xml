@@ -26,53 +26,101 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WayApp">
         <activity
-            android:name=".IntroActivity"
-            android:exported="false" />
+            android:name=".tr4_3"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".tr4_2"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".tr4_1"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".tr3_4"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".tr3_3"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".tr3_2"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".tr3_1"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Aboutappway"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".deleteaccountussersplash"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Welcome"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tr1_7"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tr1_6"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tr1_5"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tr1_4"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tr1_3"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tr1_2"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tr1_1"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Trip4"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Trip3"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Trip2"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".sendletter"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".splashcreateaccount"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".createroadsplash"
-            android:exported="false" />
-        <activity
-            android:name=".tripfirst.FIrstplace"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Trip1"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Dialogname"
             android:exported="false" />
@@ -82,22 +130,18 @@
             android:value="${MAPS_API_KEY}" />
 
         <activity
-            android:name=".M"
-            android:exported="false"
-            android:label="@string/title_activity_m" />
-        <activity
             android:name=".yandex"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Profile"
-            android:exported="false" />
-        <activity
-            android:name=".Phonelgoin"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MapsActivity"
             android:exported="false"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -116,10 +160,12 @@
 
         <activity
             android:name=".forgetpassword"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Screen"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -128,19 +174,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WayAppmap"
-            android:exported="false" />
-        <activity
             android:name=".MailLogin"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RegesterWindow"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterUser"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
     </application>

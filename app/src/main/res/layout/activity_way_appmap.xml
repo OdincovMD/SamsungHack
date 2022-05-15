@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WayAppmap">
+    tools:context=".Profile">
 
 
     <LinearLayout
@@ -15,15 +15,27 @@
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="horizontal">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profilepic"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@drawable/persw"
             app:civ_border_color="@color/black"
-            app:civ_border_width="2dp" />
-
+            app:civ_border_width="2dp"
+            />
+    <ImageView
+    android:id="@+id/imageView3"
+    android:layout_width="25dp"
+    android:layout_height="25dp"
+    android:elevation="5dp"
+    android:layout_marginTop="75dp"
+    app:srcCompat="@android:drawable/ic_menu_edit" />
+    </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,16 +74,7 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="138dp"
-        android:layout_marginRight="128dp"
-        android:elevation="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
+
 
 
 
@@ -107,7 +110,7 @@
             app:srcCompat="@drawable/technicalsupport" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/gmailinfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -137,7 +140,7 @@
             app:srcCompat="@drawable/information" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/aboutapp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -147,51 +150,41 @@
             android:textSize="20sp"
             android:layout_marginRight="120dp"/>
     </LinearLayout>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/black"
+        android:elevation="1dp"/>
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:elevation="5dp"
+        android:layout_marginBottom="10dp">
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Мы в социальных сетях"
+            android:text="Мы в Telegram"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="16sp"
             android:layout_marginBottom="15dp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:elevation="5dp">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/goolehelp"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:background="@drawable/persw"
-                android:backgroundTint="@color/white"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/insta"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:background="@drawable/persw" />
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/telegram"
+                android:elevation="8dp"/>
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/telega"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:background="@drawable/persw" />
-        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -225,9 +218,5 @@
             app:layout_constraintTop_toBottomOf="@+id/app" />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@color/black"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

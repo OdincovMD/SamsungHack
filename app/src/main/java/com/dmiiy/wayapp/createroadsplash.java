@@ -83,6 +83,7 @@ LottieAnimationView lottie;
                     Intent i = new Intent(createroadsplash.this, MapsActivity.class);
                     i.putExtras(args);
                     startActivity(i);
+                    finish();
                 }
              if (act2 != null){
                  Bundle args = new Bundle();
@@ -98,6 +99,7 @@ LottieAnimationView lottie;
                  Intent i = new Intent(createroadsplash.this, MapsActivity.class);
                  i.putExtras(args);
                  startActivity(i);
+                 finish();
              }
                 if (act3 !=null) {
                     Bundle args = new Bundle();
@@ -119,6 +121,7 @@ LottieAnimationView lottie;
                     Intent i = new Intent(createroadsplash.this, MapsActivity.class);
                     i.putExtras(args);
                     startActivity(i);
+                    finish();
                 }
                 if (act4 !=null) {
                     Bundle args = new Bundle();
@@ -132,6 +135,7 @@ LottieAnimationView lottie;
                     Intent i = new Intent(createroadsplash.this, MapsActivity.class);
                     i.putExtras(args);
                     startActivity(i);
+                    finish();
                 }
             }
         },5000);
