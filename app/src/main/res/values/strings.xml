@@ -62,4 +62,6 @@
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
+    <string name="hello">Это уникальное приложение, которое было создано для любителей путешествовать или хорошо отдыхать. Это первая версия, поэтому отзывы и критика приветствуются. С уважением, команда WAY!</string>
+    <string name="creators">Создатели: Кулаков Дмитрий, Орлова Полина</string>
 </resources>
