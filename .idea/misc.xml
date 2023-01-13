@@ -93,7 +93,59 @@
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/menu/menu.xml" value="0.1675213675213675" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/menu/nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/Dimarset/AndroidStudioProjects/WayApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/drawable/ic_baseline_person_menu.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/drawable/kgrugbtn.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/drawable/krugimage.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/drawable/kruglbtnsign.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/drawable/kruglieugli.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/drawable/profileiconkrugl.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/drawable/profway.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/drawable/rounddialog.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/drawable/splash.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/drawable/tr1.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_aboutappway.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_createroadsplash.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_deleteaccountussersplash.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_dialogname.xml" value="0.22" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_forgetpassword.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_mail_login.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_maps.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_regester_window.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_sendletter.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_splashcreateaccount.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr11.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr12.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr13.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr14.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr15.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr16.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr17.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr31.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr32.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr33.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr34.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr41.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr42.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_tr43.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_trip1.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_trip2.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_trip3.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_trip4.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_way_appmap.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_welcome.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_yandex.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/fragment_gallery.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/fragment_slideshow.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/layout_item.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/recyclercard.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/uploadinfo.xml" value="0.1" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/welcome_slide1.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/welcome_slide2.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/welcome_slide3.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/welcome_slide4.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/welcome_slide5.xml" value="0.17552083333333332" />
       </map>
     </option>
   </component>

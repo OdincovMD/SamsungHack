@@ -45,7 +45,7 @@
         android:id="@+id/textView6"
         android:layout_width="280dp"
         android:layout_height="50dp"
-        android:background="#e5d4b8"
+        android:background="@color/card3"
         android:gravity="center"
         android:text="@string/creators"
         android:textColor="@color/black"

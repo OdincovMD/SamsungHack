@@ -60,7 +60,7 @@
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#e5d4b8"
+        android:background="@color/card3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
