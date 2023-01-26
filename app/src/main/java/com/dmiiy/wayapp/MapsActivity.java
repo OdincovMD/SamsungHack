@@ -6,12 +6,15 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -30,12 +33,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     LatLng mLatLng ,mLatl,mLat,mLa,mlaton,mlato,mlatono,mlatonono;
     String mDescription,mdes,mde,md,mdesco,mdescon,mdescono,mdesconon,act;
     private ImageButton imageButton,imageView;
+    private Button qr_scan;
     private int ACCESS_LOCATION_REQUEST_CODE = 10001;
+
+    private Context ctx;
 FusedLocationProviderClient fusedLocationProviderClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        ctx = getApplicationContext();
         fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(this);
         Intent intent = getIntent();
         mLatLng = intent.getParcelableExtra("latLon");
@@ -62,12 +69,14 @@ FusedLocationProviderClient fusedLocationProviderClient;
         imageView.setOnClickListener(this);
         imageButton= (ImageButton) findViewById(R.id.btn_open_bottom_sheet);
         imageButton.setOnClickListener(this);
-        /* imageButton.setOnClickListener(new View.OnClickListener() {
+        qr_scan = (Button) findViewById(R.id.qr_button);
+        qr_scan.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                clickOpenBottomSheetFragment();
+            public void onClick(View v) {
+                Intent intent1 = new Intent(MapsActivity.this, ScanqrActivity.class);
+                startActivity(intent1);
             }
-        });*/
+        });
     }
     private void clickOpenBottomSheetFragment() {
         MyBottomSheetFragment myBottomSheetFragment=new MyBottomSheetFragment();

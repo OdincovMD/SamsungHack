@@ -15,7 +15,6 @@ public class sendletter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sendletter);
         lottie=(LottieAnimationView) findViewById(R.id.lottiesendmes);
-        //lottie.animate().translationY(-1200).setDuration(2000).setStartDelay(0);
 
         Handler handler= new Handler();
         handler.postDelayed(new Runnable() {

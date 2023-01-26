@@ -18,6 +18,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -27,33 +28,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WayApp">
         <activity
+            android:name=".ScanqrActivity"
+            android:exported="false" />
+        <activity
             android:name=".tr4_3"
             android:exported="false"
-            android:screenOrientation="fullSensor"/>
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".tr4_2"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tr4_1"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tr3_4"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tr3_3"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tr3_2"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".tr3_1"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Aboutappway"
             android:exported="false"
@@ -130,6 +134,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
+
         <activity
             android:name=".Profile"
             android:exported="false"

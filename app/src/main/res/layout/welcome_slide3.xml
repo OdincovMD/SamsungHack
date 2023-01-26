@@ -32,7 +32,7 @@
             android:layout_marginTop="20dp"
             android:paddingLeft="@dimen/desc_padding"
             android:paddingRight="@dimen/desc_padding"
-            android:text="Вот изображение странички вашего аккаунта откуда вы сможет им управлять. Также здесь присутсвуеть связь с нами, если у вас возникнут вопросы или проблемы."
+            android:text="Изображение странички Вашего аккаунта, откуда Вы сможет им управлять. Также здесь присутсвует связь с нами, при возникновении вопросов или проблем."
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="@dimen/slide_desc" />

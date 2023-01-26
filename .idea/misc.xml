@@ -108,6 +108,7 @@
         <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_deleteaccountussersplash.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_dialogname.xml" value="0.22" />
         <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_forgetpassword.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_likes.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_mail_login.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_maps.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/activity_regester_window.xml" value="0.17552083333333332" />
@@ -137,6 +138,7 @@
         <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/fragment_gallery.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/fragment_home.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/fragment_slideshow.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/item_trip.xml" value="0.2589928057553957" />
         <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/layout_item.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/porlo/AndroidStudioProjects/WayApp/app/src/main/res/layout/recyclercard.xml" value="0.17552083333333332" />
@@ -149,7 +151,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

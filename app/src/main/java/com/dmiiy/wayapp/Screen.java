@@ -62,10 +62,8 @@ private Handler handler =new Handler();
     }
     public int buttonCheckAirplaneMode (){
         if (Settings.Global.getInt(this.getContentResolver(),Settings.Global.AIRPLANE_MODE_ON,0)!=0){
-            //Toast.makeText(getApplicationContext(), "Problem", Toast.LENGTH_SHORT).show();
             return 1;
         }else{
-            //Toast.makeText(getApplicationContext(), "Ok", Toast.LENGTH_SHORT).show();
             return 0;
         }
 
