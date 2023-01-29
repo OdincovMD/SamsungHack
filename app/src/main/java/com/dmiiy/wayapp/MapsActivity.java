@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -33,7 +34,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     LatLng mLatLng ,mLatl,mLat,mLa,mlaton,mlato,mlatono,mlatonono;
     String mDescription,mdes,mde,md,mdesco,mdescon,mdescono,mdesconon,act;
     private ImageButton imageButton,imageView;
-    private Button qr_scan;
+    private ImageView qr_scan;
     private int ACCESS_LOCATION_REQUEST_CODE = 10001;
 
     private Context ctx;

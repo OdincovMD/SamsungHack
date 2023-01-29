@@ -14,8 +14,8 @@
 
     <ImageButton
         android:id="@+id/btn_open_bottom_sheet"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:background="@drawable/profileiconkrugl"
         android:layout_marginBottom="260dp"
         android:layout_marginRight="8dp"
@@ -24,17 +24,18 @@
 
     <ImageButton
         android:id="@+id/imageV"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:background="@drawable/kgrugbtn"
         android:layout_margin="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/qr_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/krugqr"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
