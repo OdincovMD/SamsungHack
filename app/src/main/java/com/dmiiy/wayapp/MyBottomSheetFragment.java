@@ -2,6 +2,7 @@ package com.dmiiy.wayapp;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -25,6 +26,8 @@ import java.util.List;
 public class MyBottomSheetFragment extends BottomSheetDialogFragment implements OnRecyclerViewItemClickListener{
 
 private RecyclerView recyclerView;
+
+private Context ctx;
 private List<ItemObject> itemObjects;
 
     @NonNull
@@ -34,7 +37,7 @@ private List<ItemObject> itemObjects;
         BottomSheetDialog bottomSheetDialog =(BottomSheetDialog) super.onCreateDialog(savedInstanceState);
         View view= LayoutInflater.from(getContext()).inflate(R.layout.layout_bottom_sheet,null);
         bottomSheetDialog.setContentView(view);
-
+        ctx = this.getContext();
         recyclerView=view.findViewById(R.id.rcv_data);
         //LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
         GridLayoutManager gridLayoutManager= new GridLayoutManager(getContext(),2);
@@ -79,6 +82,8 @@ private List<ItemObject> itemObjects;
 
     @Override
     public void onLongItemClick(int position) {
-
+        Toast toast = Toast.makeText(ctx,
+                "Пора покормить кота!", Toast.LENGTH_SHORT);
+        toast.show();
     }
 }
