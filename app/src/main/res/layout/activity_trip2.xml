@@ -53,13 +53,13 @@
         android:textStyle="italic"/>
 
 
-    <ImageView
-        android:layout_gravity="center"
-        android:layout_marginTop="27dp"
-        android:id="@+id/imageView5"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:srcCompat="@drawable/trip2last" />
+     <ImageView
+         android:id="@+id/imageView5"
+         android:layout_width="match_parent"
+         android:layout_height="200dp"
+         android:layout_gravity="center"
+         android:layout_marginTop="27dp"
+         app:srcCompat="@drawable/route2" />
 
 
 

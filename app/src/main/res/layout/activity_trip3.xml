@@ -57,13 +57,12 @@
 
 
     <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="429dp"
+        android:layout_height="181dp"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
-        android:id="@+id/imageView5"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        app:srcCompat="@drawable/trip3" />
-
+        app:srcCompat="@drawable/route3" />
 
     <CheckBox
         android:layout_gravity="center"
@@ -72,6 +71,7 @@
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
         android:text="Добавить посещение кафе"
+        android:textColor="@color/black"
         android:textSize="18sp"/>
 
     <Button

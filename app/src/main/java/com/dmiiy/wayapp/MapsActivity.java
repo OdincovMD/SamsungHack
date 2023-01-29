@@ -69,7 +69,7 @@ FusedLocationProviderClient fusedLocationProviderClient;
         imageView.setOnClickListener(this);
         imageButton= (ImageButton) findViewById(R.id.btn_open_bottom_sheet);
         imageButton.setOnClickListener(this);
-        qr_scan = (Button) findViewById(R.id.qr_button);
+        qr_scan = findViewById(R.id.qr_button);
         qr_scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

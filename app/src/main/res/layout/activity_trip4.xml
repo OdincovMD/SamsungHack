@@ -56,13 +56,13 @@ tools:context=".MainActivity">
     android:textStyle="italic"/>
 
 
-<ImageView
-    android:layout_gravity="center"
-    android:layout_marginTop="25dp"
-    android:id="@+id/imageView5"
-    android:layout_width="match_parent"
-    android:layout_height="180dp"
-    app:srcCompat="@drawable/trip4" />
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        app:srcCompat="@drawable/route4" />
 
 
 <CheckBox
@@ -72,6 +72,7 @@ tools:context=".MainActivity">
     android:layout_marginTop="20dp"
     android:layout_height="wrap_content"
     android:text="Добавить посещение кафе"
+    android:textColor="@color/black"
     android:textSize="18sp"/>
 
 <Button
