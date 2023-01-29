@@ -148,7 +148,7 @@ tg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 AlertDialog.Builder dialog =new AlertDialog.Builder(Profile.this);
                 dialog.setTitle("Вы уверены?");
-                dialog.setMessage("При удаление аккаунта дальнейший вход будет невозможен.Нужна повторная регистрация !");
+                dialog.setMessage("При удалении аккаунта дальнейший вход будет невозможен.Нужна повторная регистрация!");
                 dialog.setPositiveButton("Удалить", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
