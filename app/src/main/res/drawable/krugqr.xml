@@ -6,7 +6,7 @@
         </shape>
     </item>
     <item>
-        <bitmap android:src="@drawable/qrpngmap"
+        <bitmap android:src="@drawable/qrcodepic"
             android:gravity="center"/>
     </item>
 </layer-list>
