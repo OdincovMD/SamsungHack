@@ -96,6 +96,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="40dp"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -126,6 +127,7 @@
         android:id="@+id/app"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,6 +149,38 @@
             android:layout_marginRight="120dp"
             android:layout_weight="1"
             android:text="О приложении"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/app2"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app">
+
+        <ImageView
+            android:id="@+id/imageViewLikes"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2.5"
+            app:srcCompat="@drawable/information" />
+
+        <TextView
+            android:id="@+id/liked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="120dp"
+            android:layout_weight="1"
+            android:text="Понравивишиеся"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -194,7 +228,7 @@
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="70dp"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/app">
 

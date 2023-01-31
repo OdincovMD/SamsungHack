@@ -17,8 +17,16 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +37,10 @@ private RecyclerView recyclerView;
 
 private Context ctx;
 private List<ItemObject> itemObjects;
+
+public String like;
+public String num;
+private DatabaseReference mDatabase;
 
     @NonNull
     @Override
@@ -48,6 +60,7 @@ private List<ItemObject> itemObjects;
         //ProgramAdapter programAdapter = new ProgramAdapter(programNameList, programDescriptionList, programImages);
         RecyclerView.ItemDecoration itemDecoration= new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(itemDecoration);
+        mDatabase = FirebaseDatabase.getInstance("https://wayapp-a6d5d-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users");
         return bottomSheetDialog;
     }
 
@@ -60,6 +73,18 @@ private List<ItemObject> itemObjects;
         ProgramAdapter programAdapter = new ProgramAdapter(itemObjects,this);
         recyclerView.setAdapter(programAdapter);
     }
+
+    private void sendData(String stat, String pos){
+        mDatabase.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("route"+num).setValue(Boolean.valueOf(like));
+        if (like.equals("true")){
+            Toast toast = Toast.makeText(ctx, "Маршрут добавлен в раздел 'Понравившиеся'", Toast.LENGTH_SHORT);
+            toast.show();
+        } else{
+            Toast toast = Toast.makeText(ctx, "Маршрут убран из раздела 'Понравившиеся'", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
+
 
     @Override
     public void onnItemClick(int position) {
@@ -82,8 +107,21 @@ private List<ItemObject> itemObjects;
 
     @Override
     public void onLongItemClick(int position) {
-        Toast toast = Toast.makeText(ctx,
-                "Пора покормить кота!", Toast.LENGTH_SHORT);
-        toast.show();
+        ArrayList<UserMailreg> users = new ArrayList<>();
+        mDatabase.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                num = String.valueOf(position+1);
+                DataSnapshot data = task.getResult();
+                String status = String.valueOf(data.child("route"+num).getValue());
+                if (status.equals("false")){
+                    like = "true";
+                } else{
+                    like = "false";
+                }
+                sendData(status, num);
+            }
+        });
+
     }
 }

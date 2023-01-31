@@ -101,6 +101,7 @@ private DatabaseReference mDatabase;
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if (task.isSuccessful()){
+
                     UserMailreg user = new UserMailreg(name, email);
 
                     mDatabase.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>()
