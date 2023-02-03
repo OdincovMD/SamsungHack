@@ -38,7 +38,7 @@ import com.squareup.picasso.Picasso;
 public class Profile extends AppCompatActivity implements View.OnClickListener,Dialogname.ExampleDialogListener {
     private ImageView profilepic;
 private Button logoutb, deletebtn;
-private TextView usern,gmail,appinfo;
+private TextView usern,gmail,appinfo, likes;
 private FirebaseUser user,prof;
 private DatabaseReference reference,del;
 private String UID;
@@ -54,6 +54,14 @@ private LinearLayout support,about;
         progressBar.setVisibility(View.VISIBLE);
         deletebtn =(Button) findViewById(R.id.deleteac);
         appinfo=(TextView)findViewById(R.id.aboutapp);
+        likes = findViewById(R.id.liked);
+        likes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Profile.this, LikesActivity.class);
+                startActivity(intent);
+            }
+        });
         appinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
