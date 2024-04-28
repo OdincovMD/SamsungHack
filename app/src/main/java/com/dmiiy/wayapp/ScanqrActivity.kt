@@ -11,9 +11,14 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import me.dm7.barcodescanner.zbar.Result
 import me.dm7.barcodescanner.zbar.ZBarScannerView
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.tasks.OnSuccessListener
+import android.location.Location
 
 class ScanqrActivity : AppCompatActivity(), ZBarScannerView.ResultHandler {
     private lateinit var zbView: ZBarScannerView
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         zbView = ZBarScannerView(this)
@@ -46,7 +51,24 @@ class ScanqrActivity : AppCompatActivity(), ZBarScannerView.ResultHandler {
 
     //Обработка результата
     override fun handleResult(result: Result?) {
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         val res: String? = result?.contents
+        if (checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            fusedLocationClient.lastLocation.addOnSuccessListener(this, OnSuccessListener<Location> { location ->
+                if (location != null) {
+                    val latitude = location.latitude
+                    val longitude = location.longitude
+                    if (res.equals("1")){
+                        val intent = Intent(this, Weather::class.java)
+                        intent.putExtra("lat", latitude.toString())
+                        intent.putExtra("lon", longitude.toString())
+                        startActivity(intent)
+                    }
+                }
+            })
+        } else {
+            requestPermissions(arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 1)
+        }
         if (res.equals("1")){
             val intent = Intent(this, Trip1::class.java)
             startActivity(intent)

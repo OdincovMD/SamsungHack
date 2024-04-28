@@ -54,14 +54,7 @@ private LinearLayout support,about;
         progressBar.setVisibility(View.VISIBLE);
         deletebtn =(Button) findViewById(R.id.deleteac);
         appinfo=(TextView)findViewById(R.id.aboutapp);
-        likes = findViewById(R.id.liked);
-        likes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Profile.this, LikesActivity.class);
-                startActivity(intent);
-            }
-        });
+
         appinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,15 +80,6 @@ private LinearLayout support,about;
             }
         });
 
-tg=(ImageView)findViewById(R.id.insta);
-tg.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        Uri uri = Uri.parse("https://t.me/+XmC_6L3rMPU4MDU6");
-        Intent intent =new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
-    }
-});
         usern = (TextView) findViewById(R.id.username);
         usern.setOnClickListener(new View.OnClickListener() {
             @Override
